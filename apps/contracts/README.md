@@ -11,3 +11,10 @@ When installing packages like Open Zeppelin you may run into Git issues. To get 
 --no-commit flag:
 
 `forge install OpenZeppelin/openzeppelin-contracts --no-commit`
+
+# Yarn Dev script
+
+A mnemonic is required in the global .env in order to run the command.
+
+Oh My Zsh also requires the dotenv plugin enabled
+[How to enable plugin](https://kjune.com/2022/05/oh-my-zsh-dotenv-plugin/)

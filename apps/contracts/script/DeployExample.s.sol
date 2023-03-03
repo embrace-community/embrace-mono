@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity >=0.8.19;
 
-import { Script } from "forge-std/Script.sol";
-import { Example } from "../src/Example.sol";
+import {Script} from "forge-std/Script.sol";
+import {Example} from "../src/Example.sol";
 
 /// @dev See the Solidity Scripting tutorial: https://book.getfoundry.sh/tutorials/solidity-scripting
 contract DeployFoo is Script {
@@ -11,7 +11,7 @@ contract DeployFoo is Script {
 
     function setUp() public virtual {
         string memory mnemonic = vm.envString("MNEMONIC");
-        (deployer, ) = deriveRememberKey(mnemonic, 0);
+        (deployer,) = deriveRememberKey(mnemonic, 0);
     }
 
     function run() public {

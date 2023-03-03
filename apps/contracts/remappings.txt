@@ -2,5 +2,3 @@
 @openzeppelin-upgradeable/=lib/openzeppelin-contracts-upgradeable/
 ds-test/=lib/forge-std/lib/ds-test/src/
 forge-std/=lib/forge-std/src/
-@prb/test/=lib/prb-test/src/
-@prb/math/=lib/prb-math/src/

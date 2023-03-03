@@ -12,11 +12,8 @@
     "dev": {
       "cache": false
     },
-    "test": {
-      
-    },
-    "prettier": {
-      "outputs": []
-    }
+    "test": {},
+    "prettier": {},
+    "deploy": {}
   }
 }

@@ -3,8 +3,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "anvil",
+    "dev": "anvil -m \"$MNEMONIC\"",
     "build": "forge build",
+    "deploy:local": "yarn build ",
+    "deploy:mumbai": "yarn build",
     "test": "forge test",
     "clean": "rimraf cache out",
     "lint": "yarn lint:sol && yarn prettier:check",

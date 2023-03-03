@@ -1,9 +1,10 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity >=0.8.19 <0.9.0;
 
-import { PRBTest } from "@prb/test/PRBTest.sol";
-import { console2 } from "forge-std/console2.sol";
-import { StdCheats } from "forge-std/StdCheats.sol";
+// import { PRBTest } from "@prb/test/PRBTest.sol";
+import "forge-std/Test.sol";
+import {console2} from "forge-std/console2.sol";
+import {StdCheats} from "forge-std/StdCheats.sol";
 
 interface IERC20 {
     function balanceOf(address account) external view returns (uint256);
@@ -11,7 +12,7 @@ interface IERC20 {
 
 /// @dev See the "Writing Tests" section in the Foundry Book if this is your first time with Forge.
 /// https://book.getfoundry.sh/forge/writing-tests
-contract FooTest is PRBTest, StdCheats {
+contract FooTest is StdCheats, Test {
     /// @dev An optional function invoked before each test case is run
     function setUp() public {
         // solhint-disable-previous-line no-empty-blocks
@@ -39,7 +40,7 @@ contract FooTest is PRBTest, StdCheats {
         }
 
         // Run the test normally, otherwise.
-        vm.createSelectFork({ urlOrAlias: "ethereum", blockNumber: 16_428_000 });
+        vm.createSelectFork({urlOrAlias: "ethereum", blockNumber: 16_428_000});
         address usdc = 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48;
         address holder = 0x7713974908Be4BEd47172370115e8b1219F4A5f0;
         uint256 actualBalance = IERC20(usdc).balanceOf(holder);
