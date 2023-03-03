@@ -2,9 +2,9 @@
 
 pragma solidity >=0.8.17;
 
-import "hardhat/console.sol";
+import "forge-std/Console.sol";
 import "./AppCreationsCollection.sol"; // Includes IEmbraceSpaces
-import { IEmbraceSpaces } from "../../libraries/Interfaces.sol";
+import { IEmbraceSpaces } from "../libraries/Interfaces.sol";
 
 contract AppCreations is IEmbraceSpaces {
     struct Collection {
