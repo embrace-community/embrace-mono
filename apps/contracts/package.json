@@ -1,17 +1,10 @@
 {
   "name": "contracts",
-  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "anvil",
     "build": "forge build",
     "test": "forge test"
-  },
-  "dependencies": {
-    
-  },
-  "devDependencies": {
-   
   }
 }
