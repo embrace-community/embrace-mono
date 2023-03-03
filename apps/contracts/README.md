@@ -3,7 +3,7 @@
 Otherwise the foundry imports will not work. Open the Preferences -> Settings then search for mappings. This should open
 the settings file where you should add the mappings like below:
 
-`"solidity.remappings": [ "@openzeppelin/=apps/contracts/lib/openzeppelin-contracts/", "ds-test/=apps/contracts/lib/forge-std/lib/ds-test/src/", "forge-std/=apps/contracts/lib/forge-std/src/" ]`
+`"solidity.remappings": [ "@openzeppelin/=apps/contracts/lib/openzeppelin-contracts/", "@openzeppelin-upgradeable/=apps/contracts/lib/openzeppelin-contracts-upgradeable/", "ds-test/=apps/contracts/lib/forge-std/lib/ds-test/src/", "forge-std/=apps/contracts/lib/forge-std/src/" ]`
 
 # Installing Foundry/Solidity modules
 
