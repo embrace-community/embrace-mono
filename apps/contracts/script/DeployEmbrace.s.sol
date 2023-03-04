@@ -3,11 +3,27 @@ pragma solidity >=0.8.19;
 
 import {Script} from "forge-std/Script.sol";
 import {EmbraceApps} from "../src/EmbraceApps.sol";
+import {EmbraceCommunities} from "../src/EmbraceCommunities.sol";
+import {EmbraceCommunity} from "../src/EmbraceCommunity.sol";
+import {AppCreations} from "../src/app/AppCreations.sol";
+import {AppSocials} from "../src/app/AppSocials.sol";
 
 /// @dev See the Solidity Scripting tutorial: https://book.getfoundry.sh/tutorials/solidity-scripting
 contract Deploy is Script {
     address internal deployer;
     EmbraceApps internal embraceApps;
+    EmbraceCommunities internal embraceCommunities;
+    EmbraceCommunity internal embraceCommunity;
+    AppCreations internal appCreations;
+    AppSocials internal appSocials;
+
+    struct Apps {
+        string name;
+        address contractAddress;
+        bool enabled;
+    }
+
+    Apps[] public apps;
 
     function setUp() public virtual {
         string memory mnemonic = vm.envString("MNEMONIC");
@@ -19,22 +35,36 @@ contract Deploy is Script {
         vm.startBroadcast(deployer);
 
         embraceApps = new EmbraceApps();
+        embraceCommunity = new EmbraceCommunity();
 
-        //To get address of contract = address(embraceAccounts)
+        embraceCommunities = new EmbraceCommunities(
+            "EMBRACE",
+            "EMBRACE_COMMUNITY",
+            address(embraceCommunity)
+        );
 
-        //   const embraceCommunity = await _deployEmbraceCommunity(deployer, ethers);
-        //   const embraceCommunities = await _deployEmbraceCommunities(
-        //     deployer,
-        //     ethers,
-        //     accountsContract.address,
-        //     embraceCommunity.address,
-        //   );
+        appCreations = new AppCreations(address(embraceCommunities));
+        appSocials = new AppSocials(address(embraceCommunities));
 
-        //   const creationsContract = await _deployCreations(deployer, ethers, embraceCommunities.address);
-        //   const socialsContract = await _deploySocials(deployer, ethers, embraceCommunities.address);
-
-        //   _createApps(ethers, appsContract, creationsContract);
+        createApps();
 
         vm.stopBroadcast();
+    }
+
+    function createApps() internal {
+        // apps = [
+        //     Apps("Social", address(appSocials), true),
+        //     Apps("Creations", address(appCreations), true),
+        //     Apps("Chat Server", address(0), true),
+        //     Apps("Streaming", address(0), true),
+        //     Apps("Courses", address(0), false),
+        //     Apps("Pages", address(0), false),
+        //     Apps("Marketplace", address(0), false),
+        //     Apps("Discussions", address(0), true)
+        // ];
+
+        // for (uint256 i = 0; i < apps.length; i++) {
+        //     embraceApps.createApp(apps[i].name, apps[i].contractAddress, apps[i].enabled);
+        // }
     }
 }
