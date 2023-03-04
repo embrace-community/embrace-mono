@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity >=0.8.19;
 
+import "forge-std/Console.sol";
 import {Script} from "forge-std/Script.sol";
 import {EmbraceApps} from "../src/EmbraceApps.sol";
 import {EmbraceCommunities} from "../src/EmbraceCommunities.sol";
@@ -34,7 +35,6 @@ contract Deploy is Script {
         // TODO: Run through each of the Embrace contracts to deploy
         vm.startBroadcast(deployer);
 
-        embraceApps = new EmbraceApps();
         embraceCommunity = new EmbraceCommunity();
 
         embraceCommunities = new EmbraceCommunities(
@@ -43,8 +43,16 @@ contract Deploy is Script {
             address(embraceCommunity)
         );
 
+        embraceApps = new EmbraceApps();
+
         appCreations = new AppCreations(address(embraceCommunities));
         appSocials = new AppSocials(address(embraceCommunities));
+
+        console.log("CONTRACT_ADDRESS_COMMUNITY=\"%s\"", address(embraceCommunity));
+        console.log("CONTRACT_ADDRESS_COMMUNITIES=\"%s\"", address(embraceCommunities));
+        console.log("CONTRACT_ADDRESS_APPS=\"%s\"", address(embraceApps));
+        console.log("CONTRACT_ADDRESS_APP_CREATIONS=\"%s\"", address(appCreations));
+        console.log("CONTRACT_ADDRESS_APP_SOCIALS=\"%s\"", address(appSocials));
 
         createApps();
 
