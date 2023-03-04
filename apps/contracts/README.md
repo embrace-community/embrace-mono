@@ -18,3 +18,7 @@ A mnemonic is required in the global .env in order to run the command.
 
 Oh My Zsh also requires the dotenv plugin enabled
 [How to enable plugin](https://kjune.com/2022/05/oh-my-zsh-dotenv-plugin/)
+
+# Cheatsheet
+
+[Nader Cheatsheet for Foundry](https://github.com/dabit3/foundry-cheatsheet)

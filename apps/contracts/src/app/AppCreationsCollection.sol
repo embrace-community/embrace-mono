@@ -1,44 +1,22 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.8.17;
 
-import { IEmbraceSpaces } from "../libraries/Interfaces.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
+import "./App.sol";
 import "forge-std/Console.sol";
 
-contract AppCreationsCollection is ERC721Enumerable, ERC721URIStorage, IEmbraceSpaces {
+contract AppCreationsCollection is App, ERC721Enumerable, ERC721URIStorage {
     using Counters for Counters.Counter;
+
     Counters.Counter private _creationId;
 
-    error ErrorOnlyAdmin(uint256 spaceId, address memberAddress);
     event CreationCreated(
-        uint256 indexed spaceId,
-        address indexed creator,
-        address indexed collectionContractAddress,
-        uint256 tokenId
+        uint256 indexed communityId, address indexed creator, address indexed collectionContractAddress, uint256 tokenId
     );
 
-    address public embraceSpacesAddress;
-
-    modifier onlySpaceAdmin(uint256 _spaceId) {
-        console.log("onlySpaceAdmin", _spaceId, embraceSpacesAddress);
-        if (!isAdminExternal(_spaceId, msg.sender) && !isFounderExternal(_spaceId, msg.sender))
-            revert ErrorOnlyAdmin(_spaceId, msg.sender);
-        _;
-    }
-
-    function isAdminExternal(uint256 _spaceId, address _address) public view returns (bool) {
-        console.log("isAdminExternal", _spaceId, embraceSpacesAddress);
-        return IEmbraceSpaces(embraceSpacesAddress).isAdminExternal(_spaceId, _address);
-    }
-
-    function isFounderExternal(uint256 _spaceId, address _address) public view returns (bool) {
-        console.log("isFounderExternal", _spaceId, embraceSpacesAddress);
-        return IEmbraceSpaces(embraceSpacesAddress).isFounderExternal(_spaceId, _address);
-    }
-
-    uint256 private spaceId;
+    uint256 private communityId;
 
     string private baseUri;
 
@@ -49,18 +27,18 @@ contract AppCreationsCollection is ERC721Enumerable, ERC721URIStorage, IEmbraceS
     }
 
     constructor(
-        address _embraceSpacesAddress,
-        uint256 _spaceId,
+        IEmbraceCommunities _embraceCommunities,
+        uint256 _communityId,
         string memory _name,
         string memory _symbol
     ) ERC721(_name, _symbol) {
-        spaceId = _spaceId;
-        embraceSpacesAddress = _embraceSpacesAddress;
+        communityId = _communityId;
+        embraceCommunities = _embraceCommunities;
         _setBaseURI("ipfs://");
     }
 
-    // Only space admins can create a collection for the space
-    function mint(string memory _tokenURI) public onlySpaceAdmin(spaceId) {
+    // Only admins can create a collection
+    function mint(string memory _tokenURI) public onlyAdmin(communityId) {
         _creationId.increment(); // First creation is 1
 
         uint256 newCreationId = _creationId.current();
@@ -72,7 +50,7 @@ contract AppCreationsCollection is ERC721Enumerable, ERC721URIStorage, IEmbraceS
         }
 
         // Event for when a creation is minted
-        emit CreationCreated(spaceId, msg.sender, address(this), newCreationId);
+        emit CreationCreated(communityId, msg.sender, address(this), newCreationId);
     }
 
     function tokenURI(uint256 tokenId) public view virtual override(ERC721, ERC721URIStorage) returns (string memory) {
@@ -115,12 +93,11 @@ contract AppCreationsCollection is ERC721Enumerable, ERC721URIStorage, IEmbraceS
         return baseUri;
     }
 
-    function _beforeTokenTransfer(
-        address from,
-        address to,
-        uint256 tokenId, /* firstTokenId */
-        uint256 batchSize
-    ) internal virtual override(ERC721, ERC721Enumerable) {
+    function _beforeTokenTransfer(address from, address to, uint256 tokenId, /* firstTokenId */ uint256 batchSize)
+        internal
+        virtual
+        override(ERC721, ERC721Enumerable)
+    {
         super._beforeTokenTransfer(from, to, tokenId, batchSize);
     }
 

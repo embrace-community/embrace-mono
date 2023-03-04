@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "anvil -m \"$MNEMONIC\"",
     "build": "forge build",
-    "deploy:local": "yarn build ",
-    "deploy:mumbai": "yarn build",
+    "deploy:local": "forge script script/DeployEmbrace.s.sol:Deploy --rpc-url $RPC_URL_LOCALHOST --broadcast --verify -vvvv",
+    "deploy:mumbai": "forge script script/DeployEmbrace.s.sol:Deploy --rpc-url $RPC_URL_MUMBAI --broadcast --verify -vvvv",
     "test": "forge test",
     "clean": "rimraf cache out",
     "lint": "yarn lint:sol && yarn prettier:check",

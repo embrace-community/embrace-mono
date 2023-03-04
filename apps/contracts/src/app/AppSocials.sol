@@ -2,63 +2,42 @@
 
 pragma solidity >=0.8.17;
 
-import { IEmbraceSpaces } from "../libraries/Interfaces.sol";
+import {IEmbraceCommunities} from "../libraries/Interfaces.sol";
 import "forge-std/Console.sol";
+import "./App.sol";
 
-contract AppSocials is IEmbraceSpaces {
+contract AppSocials is App {
     struct Social {
         uint256 id;
         address lensWallet;
         string lensDefaultProfileId;
     }
 
-    mapping(uint256 => Social) public spaceSocials;
-
-    error ErrorOnlyAdmin(uint256 spaceId, address memberAddress);
+    mapping(uint256 => Social) public communitySocials;
 
     event SocialCreated(
-        uint256 indexed spaceId,
-        address indexed creator,
-        address lensWallet,
-        string indexed lensDefaultProfileId
+        uint256 indexed communityId, address indexed creator, address lensWallet, string indexed lensDefaultProfileId
     );
 
-    address public embraceSpacesAddress;
-
-    constructor(address _embraceSpacesAddress) {
-        embraceSpacesAddress = _embraceSpacesAddress;
+    constructor(address _embraceCommunitiesAddress) {
+        embraceCommunities = IEmbraceCommunities(_embraceCommunitiesAddress);
     }
 
-    modifier onlySpaceAdmin(uint256 _spaceId) {
-        if (!isAdminExternal(_spaceId, msg.sender) && !isFounderExternal(_spaceId, msg.sender))
-            revert ErrorOnlyAdmin(_spaceId, msg.sender);
-        _;
-    }
-
-    function isAdminExternal(uint256 _spaceId, address _address) public view returns (bool) {
-        return IEmbraceSpaces(embraceSpacesAddress).isAdminExternal(_spaceId, _address);
-    }
-
-    function isFounderExternal(uint256 _spaceId, address _address) public view returns (bool) {
-        return IEmbraceSpaces(embraceSpacesAddress).isFounderExternal(_spaceId, _address);
-    }
-
-    // Only space admins can create a collection for the space
-    function createSocial(
-        uint256 _spaceId,
-        address _lensWallet,
-        string memory _lensDefaultProfileId
-    ) public onlySpaceAdmin(_spaceId) {
+    // Only community admins can create a social
+    function createSocial(uint256 _communityId, address _lensWallet, string memory _lensDefaultProfileId)
+        public
+        onlyAdmin(_communityId)
+    {
         // Create new ERC721 collection contract
-        Social memory social = Social(_spaceId, _lensWallet, _lensDefaultProfileId);
+        Social memory social = Social(_communityId, _lensWallet, _lensDefaultProfileId);
 
-        spaceSocials[_spaceId] = social;
+        communitySocials[_communityId] = social;
 
         // Event for social creation
-        emit SocialCreated(_spaceId, msg.sender, _lensWallet, _lensDefaultProfileId);
+        emit SocialCreated(_communityId, msg.sender, _lensWallet, _lensDefaultProfileId);
     }
 
-    function getSocial(uint256 _spaceId) public view returns (Social memory) {
-        return spaceSocials[_spaceId];
+    function getSocial(uint256 _communityId) public view returns (Social memory) {
+        return communitySocials[_communityId];
     }
 }

@@ -3,14 +3,11 @@ pragma solidity >=0.8.19;
 
 import "./Types.sol";
 
-interface IEmbraceSpaces {
-    function isAdminExternal(uint256 _spaceId, address _address) external view returns (bool);
-
-    function isFounderExternal(uint256 _spaceId, address _address) external view returns (bool);
-}
-
 interface IEmbraceCommunities {
     function ownerOf(uint256 _tokenId) external view returns (address);
+
+    function isFounder(uint256 _communityId, address _address) external view returns (bool);
+    function isAdmin(uint256 _communityId, address _address) external view returns (bool);
 }
 
 interface IEmbraceCommunity {
@@ -26,8 +23,6 @@ interface IEmbraceCommunity {
     function setCommunityData(CommunityData memory _communityData) external;
 
     function setCommunitiesContractAddress(address _communitiesContractAddress) external;
-}
 
-interface IEmbraceAccounts {
-    function addSpace(address _account, uint256 _spaceId) external;
+    function isAdmin(address _address) external view returns (bool);
 }

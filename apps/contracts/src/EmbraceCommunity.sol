@@ -21,13 +21,14 @@ error ErrorFounderCannotLeave(address account);
 
 contract EmbraceCommunity is ERC721URIStorageUpgradeable, ERC721HolderUpgradeable {
     using CountersUpgradeable for CountersUpgradeable.Counter;
+
     CountersUpgradeable.Counter private memberTokenId;
     CountersUpgradeable.Counter private burnCount; // Number of times a members NFT has been burned / left the community
 
-    event MemberAdded(uint256 communityId, uint256 tokenId, address member);
-    event MemberRemoved(uint256 communityId, uint256 tokenId, address member);
-    event AdminAdded(uint256 communityId, address member);
-    event AdminRemoved(uint256 communityId, address member);
+    event MemberAdded(uint256 communityId, address memberAddress, uint256 tokenId);
+    event MemberRemoved(uint256 communityId, address memberAddress, uint256 tokenId);
+    event AdminAdded(uint256 communityId, address memberAddress);
+    event AdminRemoved(uint256 communityId, address memberAddress);
 
     // NFT related
     string private baseUri;
@@ -166,31 +167,34 @@ contract EmbraceCommunity is ERC721URIStorageUpgradeable, ERC721HolderUpgradeabl
         return getFounder() == msg.sender;
     }
 
+    // Todo change this to an admin NFT contract - for now okay
     function isAdmin() public view returns (bool) {
         return admins[msg.sender] || isFounder();
     }
 
+    function isAdmin(address _address) external view returns (bool) {
+        return admins[_address] || isFounder();
+    }
+
     function getCommunityData() public view returns (CommunityData memory) {
-        return
-            CommunityData({
-                handle: handle,
-                apps: apps,
-                metadata: metadata,
-                visibility: visibility,
-                access: access,
-                membershipGate: membershipGate
-            });
+        return CommunityData({
+            handle: handle,
+            apps: apps,
+            metadata: metadata,
+            visibility: visibility,
+            access: access,
+            membershipGate: membershipGate
+        });
     }
 
     function getMemberStatus(address _address) public view returns (MemberStatus memory) {
         bool isAccountFounder = getFounder() == _address;
 
-        return
-            MemberStatus({
-                isMember: isAccountFounder || memberToTokenId[_address] != 0,
-                isFounder: isAccountFounder,
-                isAdmin: isAccountFounder || admins[_address]
-            });
+        return MemberStatus({
+            isMember: isAccountFounder || memberToTokenId[_address] != 0,
+            isFounder: isAccountFounder,
+            isAdmin: isAccountFounder || admins[_address]
+        });
     }
 
     function getFounder() public view returns (address) {
@@ -239,7 +243,7 @@ contract EmbraceCommunity is ERC721URIStorageUpgradeable, ERC721HolderUpgradeabl
 
         memberToTokenId[_memberAddress] = newMemberTokenId;
 
-        emit MemberAdded(communityId, newMemberTokenId, _memberAddress);
+        emit MemberAdded(communityId, _memberAddress, newMemberTokenId);
     }
 
     function _setBaseURI(string memory _uri) internal {
@@ -260,7 +264,7 @@ contract EmbraceCommunity is ERC721URIStorageUpgradeable, ERC721HolderUpgradeabl
     // ERC1155 can use balanceOf(account, tokenId) to see if greater than 0 - will need to know the token id
     // Will be more complex if we want to check a contract on a different chain
     function _meetsGateRequirements(address _account) private view returns (bool) {
-        return true;
+        // return true;
     }
 
     function _memberRemove(address _account) private {
@@ -272,7 +276,7 @@ contract EmbraceCommunity is ERC721URIStorageUpgradeable, ERC721HolderUpgradeabl
         burnCount.increment();
         delete memberToTokenId[_account];
 
-        emit MemberRemoved(communityId, tokenId, _account);
+        emit MemberRemoved(communityId, _account, tokenId);
     }
 
     function _adminAdd(address _account) internal {

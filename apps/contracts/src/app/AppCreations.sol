@@ -3,83 +3,65 @@
 pragma solidity >=0.8.17;
 
 import "forge-std/Console.sol";
-import "./AppCreationsCollection.sol"; // Includes IEmbraceSpaces
-import { IEmbraceSpaces } from "../libraries/Interfaces.sol";
+import "./AppCreationsCollection.sol";
+import {IEmbraceCommunities} from "../libraries/Interfaces.sol";
+import "./App.sol";
 
-contract AppCreations is IEmbraceSpaces {
+contract AppCreations is App {
     struct Collection {
         uint128 id;
         address contractAddress;
         string name;
     }
 
-    mapping(uint256 => Collection[]) public spaceCollections;
-    mapping(uint256 => uint64) public spaceToCollectionCount;
+    mapping(uint256 => Collection[]) public communityCollections;
+    mapping(uint256 => uint64) public communityToCollectionCount;
 
-    error ErrorOnlyAdmin(uint256 spaceId, address memberAddress);
+    event CollectionCreated(uint256 indexed communityId, address indexed creator, Collection collection);
 
-    event CollectionCreated(uint256 indexed spaceId, address indexed creator, Collection collection);
-
-    address public embraceSpacesAddress;
-
-    constructor(address _embraceSpacesAddress) {
-        embraceSpacesAddress = _embraceSpacesAddress;
+    constructor(address _embraceCommunitiesAddress) {
+        embraceCommunities = IEmbraceCommunities(_embraceCommunitiesAddress);
     }
 
-    modifier onlySpaceAdmin(uint256 _spaceId) {
-        if (!isAdminExternal(_spaceId, msg.sender) && !isFounderExternal(_spaceId, msg.sender))
-            revert ErrorOnlyAdmin(_spaceId, msg.sender);
-        _;
-    }
-
-    function isAdminExternal(uint256 _spaceId, address _address) public view returns (bool) {
-        return IEmbraceSpaces(embraceSpacesAddress).isAdminExternal(_spaceId, _address);
-    }
-
-    function isFounderExternal(uint256 _spaceId, address _address) public view returns (bool) {
-        return IEmbraceSpaces(embraceSpacesAddress).isFounderExternal(_spaceId, _address);
-    }
-
-    // Only space admins can create a collection for the space
-    function createCollection(
-        uint256 _spaceId,
-        string memory _name,
-        string memory _symbol
-    ) public onlySpaceAdmin(_spaceId) {
+    // Only community admins can create a collection
+    function createCollection(uint256 _communityId, string memory _name, string memory _symbol)
+        public
+        onlyAdmin(_communityId)
+    {
         // Create new ERC721 collection contract
         AppCreationsCollection newCollection = new AppCreationsCollection(
-            embraceSpacesAddress,
-            _spaceId,
+            embraceCommunities,
+            _communityId,
             _name,
             _symbol
         );
 
-        // Increment collection count for space
+        // Increment collection count for community
         // Used for collection id - we start at 1, so we increment before pushing to array
-        spaceToCollectionCount[_spaceId]++;
+        communityToCollectionCount[_communityId]++;
 
         Collection memory collection = Collection({
-            id: spaceToCollectionCount[_spaceId],
+            id: communityToCollectionCount[_communityId],
             contractAddress: address(newCollection),
             name: _name
         });
 
-        spaceCollections[_spaceId].push(collection);
+        communityCollections[_communityId].push(collection);
 
         // Event for collection creation
-        emit CollectionCreated(_spaceId, msg.sender, collection);
+        emit CollectionCreated(_communityId, msg.sender, collection);
     }
 
-    function getCollection(uint256 _spaceId, uint128 _id) public view returns (Collection memory) {
+    function getCollection(uint256 _communityIdId, uint128 _id) public view returns (Collection memory) {
         uint128 index = _id - 1;
-        return spaceCollections[_spaceId][index];
+        return communityCollections[_communityIdId][index];
     }
 
-    function getCollectionCount(uint256 _spaceId) public view returns (uint64) {
-        return spaceToCollectionCount[_spaceId];
+    function getCollectionCount(uint256 _communityIdId) public view returns (uint64) {
+        return communityToCollectionCount[_communityIdId];
     }
 
-    function getCollections(uint256 _spaceId) public view returns (Collection[] memory) {
-        return spaceCollections[_spaceId];
+    function getCollections(uint256 _communityIdId) public view returns (Collection[] memory) {
+        return communityCollections[_communityIdId];
     }
 }

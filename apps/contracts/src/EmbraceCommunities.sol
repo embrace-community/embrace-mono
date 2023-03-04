@@ -15,6 +15,7 @@ error ErrorNotCommunityOwner(uint256 communityId, address account);
 // Stores all the communities created with the reference to the ERC721 Community contract
 contract EmbraceCommunities is ERC721URIStorage, ERC721Holder {
     using Counters for Counters.Counter;
+
     Counters.Counter private communityId;
     Counters.Counter private burnCount; // Number of times a NFT has been burned / community closed
 
@@ -34,8 +35,6 @@ contract EmbraceCommunities is ERC721URIStorage, ERC721Holder {
 
     Community[] private communities;
 
-    IEmbraceAccounts immutable accountsContract;
-
     modifier onlyFounder(uint256 _communityId) {
         if (ownerOf(_communityId) != msg.sender) {
             revert ErrorNotCommunityOwner(_communityId, msg.sender);
@@ -43,14 +42,22 @@ contract EmbraceCommunities is ERC721URIStorage, ERC721Holder {
         _;
     }
 
-    constructor(
-        string memory _name,
-        string memory _symbol,
-        address _accountsContractAddress,
-        address _embraceCommunityAddress
-    ) ERC721(_name, _symbol) {
+    function isFounder(uint256 _communityId, address _address) external view returns (bool) {
+        if (ownerOf(_communityId) != _address) {
+            return false;
+        }
+
+        return true;
+    }
+
+    function isAdmin(uint256 _communityId, address _address) external view returns (bool) {
+        Community memory community = communities[_communityId - 1];
+
+        return IEmbraceCommunity(community.contractAddress).isAdmin(_address);
+    }
+
+    constructor(string memory _name, string memory _symbol, address _embraceCommunityAddress) ERC721(_name, _symbol) {
         embraceCommunityAddress = _embraceCommunityAddress;
-        accountsContract = IEmbraceAccounts(_accountsContractAddress);
 
         _setBaseURI("ipfs://");
     }
@@ -91,9 +98,6 @@ contract EmbraceCommunities is ERC721URIStorage, ERC721Holder {
 
         handleToId[_handleBytes] = newCommunityId;
 
-        // Add space to founder's account
-        accountsContract.addSpace(msg.sender, newCommunityId);
-
         // Stage 1 - save community in this contract
         // a) Mint NFT for community
         _mint(msg.sender, newCommunityId);
@@ -129,10 +133,10 @@ contract EmbraceCommunities is ERC721URIStorage, ERC721Holder {
         return community;
     }
 
-    function updateCommunity(
-        uint256 _communityId,
-        CommunityData memory _CommunityData
-    ) public onlyFounder(_communityId) {
+    function updateCommunity(uint256 _communityId, CommunityData memory _CommunityData)
+        public
+        onlyFounder(_communityId)
+    {
         Community memory community = communities[_communityId - 1];
 
         IEmbraceCommunity(community.contractAddress).setCommunityData(_CommunityData);
