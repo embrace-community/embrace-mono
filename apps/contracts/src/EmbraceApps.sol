@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 
 pragma solidity >=0.8.17;
+// NOTE: This may now be redundant
 
 import "@openzeppelin/contracts/utils/Counters.sol";
 

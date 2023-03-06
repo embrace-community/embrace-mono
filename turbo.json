@@ -12,7 +12,9 @@
     "dev": {
       "cache": false
     },
-    "test": {},
+    "test": {
+      "cache": true
+    },
     "prettier": {},
     "deploy": {}
   }
