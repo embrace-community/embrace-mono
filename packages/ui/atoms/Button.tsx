@@ -6,13 +6,14 @@ interface Props {
 
 export const Button = ({
   primary = false,
-  label = "Boop",
+  label = "Default",
   size = "small",
 }: Props) => {
   return (
     <button
       style={{
         backgroundColor: primary ? "green" : "blue",
+        color: "white",
         fontSize: size === "large" ? "24px" : "14px",
       }}
     >
