@@ -11,13 +11,14 @@ export const Button = ({
 }: Props) => {
   return (
     <button
-      style={{
-        backgroundColor: primary ? "green" : "blue",
-        color: "white",
-        fontSize: size === "large" ? "24px" : "14px",
-      }}
+      // style={{
+      //   backgroundColor: primary ? "green" : "blue",
+      //   color: "white",
+      //   fontSize: size === "large" ? "24px" : "14px",
+      // }}
+      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
     >
-      {label}
+      {label}zz
     </button>
   );
 };
