@@ -1,5 +1,6 @@
 {
   "name": "embrace-mono",
+  "private": true,
   "version": "0.0.0",
   "workspaces": [
     "apps/*",
@@ -19,6 +20,5 @@
   },
   "engines": {
     "node": ">=14.0.0"
-  },
-  "packageManager": "yarn@3.4.1"
+  }
 }
