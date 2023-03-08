@@ -10,7 +10,10 @@ export default {
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: "color" },
+    // size: {
+    //   options: ["small", "medium", "large"],
+    //   control: { type: "select" },
+    // },
   },
 } as ComponentMeta<typeof Button>;
 
@@ -22,27 +25,18 @@ export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
   label: "Button",
+  size: "medium",
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  label: "Button",
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: "large",
+  primary: false,
   label: "Button",
 };
 
 export const Small = Template.bind({});
 Small.args = {
+  primary: false,
+  label: "Small",
   size: "small",
-  label: "Button",
-};
-
-export const Another = Template.bind({});
-Another.args = {
-  size: "small",
-  label: "Another Example",
 };

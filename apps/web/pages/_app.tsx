@@ -4,10 +4,5 @@ import "../styles/globals.css";
 import "ui/styles.css";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <h1 className="text-3xl font-bold underline">Layout!!!</h1>
-      <Component {...pageProps} />
-    </>
-  );
+  return <Component {...pageProps} />;
 }
