@@ -1,15 +1,16 @@
+import React from "react";
 import classNames from "classnames";
 
 type Size = "small" | "medium" | "large";
 interface Props {
   primary?: boolean;
   size?: Size;
-  label: string;
+  label?: string;
 }
 
 export const Button = ({
   primary = false,
-  label = "Default",
+  label = "Button",
   size = "medium",
 }: Props) => {
   return (
@@ -23,6 +24,7 @@ export const Button = ({
         "text-md": size === "medium",
         "text-lg": size === "large",
       })}
+      onClick={() => alert("clicked")}
     >
       {label}
     </button>
