@@ -1,4 +1,3 @@
-import React from "react";
 import classNames from "classnames";
 
 type Size = "small" | "medium" | "large";
@@ -6,12 +5,14 @@ interface Props {
   primary?: boolean;
   size?: Size;
   label?: string;
+  onClick?: () => void;
 }
 
 export const Button = ({
   primary = false,
   label = "Button",
   size = "medium",
+  onClick = () => {},
 }: Props) => {
   return (
     <button
@@ -24,7 +25,7 @@ export const Button = ({
         "text-md": size === "medium",
         "text-lg": size === "large",
       })}
-      onClick={() => alert("clicked")}
+      onClick={onClick}
     >
       {label}
     </button>
