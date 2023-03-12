@@ -2,6 +2,9 @@ module.exports = {
 	content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
 	theme: {
 		extend: {
+			backgroundImage: {
+				"gradient-background": "url('/imgs/gradient-background.png')"
+			},
 			colors: {},
 			spacing: {
 				"9/16": "56.25%",
