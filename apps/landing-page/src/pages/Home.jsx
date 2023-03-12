@@ -21,12 +21,14 @@ function Home() {
 					className="relative max-w-6xl mx-auto h-0 pointer-events-none"
 					aria-hidden="true"
 				>
-					<PageIllustration />
+					{/* <PageIllustration /> */}
 				</div>
 
 				{/*  Page sections */}
 				<HeroHome />
-				<FeaturesBlocks />
+				<div className="hidden">
+					<FeaturesBlocks />
+				</div>
 				<FeaturesZigZag />
 			</main>
 

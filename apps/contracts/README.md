@@ -22,3 +22,11 @@ Oh My Zsh also requires the dotenv plugin enabled
 # Cheatsheet
 
 [Nader Cheatsheet for Foundry](https://github.com/dabit3/foundry-cheatsheet)
+
+# Kill Anvil process
+
+On occassion Anvil will stay running when terminal is closed. Run following commands:
+
+ps aux | grep anvil
+
+kill -9 $id
