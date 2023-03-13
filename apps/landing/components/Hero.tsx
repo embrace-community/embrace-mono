@@ -1,4 +1,8 @@
+import classNames from "classnames";
+import { Roboto } from "next/font/google";
 import React from "react";
+
+const roboto = Roboto({ weight: "400", subsets: ["latin"] });
 
 function Hero() {
   return (
@@ -8,10 +12,22 @@ function Hero() {
         <div className="relative pt-32 pb-10 md:pt-40 md:pb-16">
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h1 mb-0" data-aos="fade-up">
+            <h1
+              className={classNames({
+                "h1 mb-0": true,
+                [roboto.className]: true,
+              })}
+              data-aos="fade-up"
+            >
               Own your platform
             </h1>
-            <h1 className="h1" data-aos="fade-up">
+            <h1
+              className={classNames({
+                "h1 mb-0": true,
+                [roboto.className]: true,
+              })}
+              data-aos="fade-up"
+            >
               Embrace your community
             </h1>
 
