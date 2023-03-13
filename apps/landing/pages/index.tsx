@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -23,7 +23,7 @@ export default function Home() {
         <title>Embrace Community</title>
       </Head>
 
-      <div className="flex flex-col min-h-screen overflow-hidden">
+      <div className="flex min-h-screen overflow-hidden">
         <Header />
 
         <main className="grow">
