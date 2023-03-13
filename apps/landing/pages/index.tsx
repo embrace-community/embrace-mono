@@ -1,12 +1,11 @@
-import { Inter } from "next/font/google";
+import classNames from "classnames";
+import { Inter, Roboto, Nunito } from "next/font/google";
 import Head from "next/head";
 import React from "react";
 import Features from "../components/Features";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
-
-// const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
