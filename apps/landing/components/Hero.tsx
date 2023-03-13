@@ -1,8 +1,9 @@
 import classNames from "classnames";
-import { Roboto } from "next/font/google";
+import { Roboto, Montserrat } from "next/font/google";
 import React from "react";
 
 const roboto = Roboto({ weight: "400", subsets: ["latin"] });
+const montserrat = Montserrat({ weight: "500", subsets: ["latin"] });
 
 function Hero() {
   return (
@@ -15,7 +16,7 @@ function Hero() {
             <h1
               className={classNames({
                 "h1 mb-0": true,
-                [roboto.className]: true,
+                [montserrat.className]: true,
               })}
               data-aos="fade-up"
             >
@@ -24,7 +25,7 @@ function Hero() {
             <h1
               className={classNames({
                 "h1 mb-0": true,
-                [roboto.className]: true,
+                [montserrat.className]: true,
               })}
               data-aos="fade-up"
             >

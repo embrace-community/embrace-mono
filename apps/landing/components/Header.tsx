@@ -10,7 +10,7 @@ function Header() {
           <div className="shrink-0 mr-4 mt-8">
             {/* Logo */}
             <Image
-              src="/images/embrace-earth-web.png"
+              src="/images/embrace.png"
               alt="emabrace logo"
               width={310}
               height={75}

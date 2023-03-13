@@ -1,9 +1,10 @@
 import classNames from "classnames";
-import { Roboto } from "next/font/google";
+import { Roboto, Montserrat } from "next/font/google";
 import React from "react";
 import Feature from "./Feature";
 
 const roboto = Roboto({ weight: "400", subsets: ["latin"] });
+const montserrat = Montserrat({ weight: "400", subsets: ["latin"] });
 
 function Features() {
   return (
@@ -15,10 +16,10 @@ function Features() {
             <h1
               className={classNames({
                 "h2 mb-4": true,
-                [roboto.className]: true,
+                [montserrat.className]: true,
               })}
             >
-              One community, many platforms
+              Put your Community first
             </h1>
             <p className="text-xl text-gray-400">
               Engage with your community on your terms whilst sharing content
