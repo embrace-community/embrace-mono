@@ -21,8 +21,8 @@ function Features() {
               One community, many platforms
             </h1>
             <p className="text-xl text-gray-400">
-              Add your media to Embrace and it will be available on all of your
-              platforms.
+              Engage with your community on your terms whilst sharing content
+              with your members across multiple platforms.
             </p>
           </div>
 
@@ -30,44 +30,35 @@ function Features() {
           <div className="grid gap-20">
             {/* 1st item */}
             <Feature
-              title="Keep projects on schedule"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua."
+              title="Own your platform"
+              description="Your content and community are the result of your dedicated work, why hand over ownership to a platform that can destroy all your hard work at any moment?  Instead take full custody of your creative work."
               image="https://place-hold.it/405/dadada"
-              benefits={[
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-              ]}
+              benefits={["Control your content", "Engage with your community"]}
             />
 
             {/* 2nd item */}
             <Feature
-              title="Keep projects on schedule"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua."
+              title="Decentralised Technologies"
+              description="Web3 technologies enable decentralisation, empowering creatives by ensuring no centralised gatekeeper can censure your content or de-platform you. "
               image="https://place-hold.it/405/dadada"
               benefits={[
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                "Permissionless publishing",
+                "No centralised gatekeepers",
+                "Blockchain based",
+                "IPFS hosted content",
               ]}
               rtl
             />
 
             {/* 3rd item */}
             <Feature
-              title="Keep projects on schedule"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua."
+              title="Embrace your Community"
+              description="Grow your community across multiple platforms and engage with members through your own community site."
               image="https://place-hold.it/405/dadada"
               benefits={[
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                "You own your platform",
+                "Create members only content",
+                "Monetize your content",
               ]}
             />
           </div>
