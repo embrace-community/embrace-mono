@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-background": "url('/imgs/gradient-background.png')",
+        "gradient-background": "url('/images/gradient-background.png')",
       },
       colors: {},
       spacing: {
@@ -51,5 +51,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [],
 };
