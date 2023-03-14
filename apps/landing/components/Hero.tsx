@@ -13,10 +13,10 @@ function Hero() {
         {/* Hero content */}
         <div className="relative mt-36 mb-10 md:mt-56 md:mb-16">
           {/* Section header */}
-          <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+          <div className="max-w-3xl mx-auto text-center">
             <h1
               className={classNames({
-                "h1 mb-0": true,
+                "h3 md:h2 md:h1 mb-0": true,
                 [inter.className]: true,
               })}
               data-aos="fade-up"
@@ -25,7 +25,7 @@ function Hero() {
             </h1>
             <h1
               className={classNames({
-                "h1 mb-36": true,
+                "h3 md:h2 md:h1 mb-16 md:mb-36": true,
                 [inter.className]: true,
               })}
               data-aos="fade-up"
@@ -46,7 +46,7 @@ function Hero() {
           </div>
 
           {/* Hero image */}
-          <div className="mt-28">
+          <div className="mt-20 md:mt-28">
             <div
               className="relative flex justify-center items-center "
               data-aos="fade-up"
