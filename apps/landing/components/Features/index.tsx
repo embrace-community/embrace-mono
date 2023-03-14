@@ -53,7 +53,7 @@ function Features() {
           <Header />
 
           {/* Features */}
-          <div className="grid gap-20">
+          <div className="grid gap-12 md:gap-20">
             {features.map((feature: Feature, index: number) => {
               return (
                 <Feature
