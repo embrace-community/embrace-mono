@@ -1,5 +1,3 @@
-import classNames from "classnames";
-import { Inter, Roboto, Nunito } from "next/font/google";
 import Head from "next/head";
 import React from "react";
 import Features from "../components/Features";

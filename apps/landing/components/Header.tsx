@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
 
 function Header() {
@@ -10,7 +9,7 @@ function Header() {
           <div className="shrink-0 mr-4 mt-8">
             {/* Logo */}
             <Image
-              src="/images/embrace-earth-web.png"
+              src="/images/embrace-inter.png"
               alt="emabrace logo"
               width={310}
               height={75}
