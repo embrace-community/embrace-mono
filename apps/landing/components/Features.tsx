@@ -1,10 +1,9 @@
 import classNames from "classnames";
-import { Roboto, Montserrat } from "next/font/google";
+import { Inter } from "next/font/google";
 import React from "react";
 import Feature from "./Feature";
 
-const roboto = Roboto({ weight: "400", subsets: ["latin"] });
-const montserrat = Montserrat({ weight: "400", subsets: ["latin"] });
+const inter = Inter({ weight: "300", subsets: ["latin"] });
 
 function Features() {
   return (
@@ -16,12 +15,12 @@ function Features() {
             <h1
               className={classNames({
                 "h2 mb-4": true,
-                [montserrat.className]: true,
+                [inter.className]: true,
               })}
             >
               Put your Community first
             </h1>
-            <p className="text-xl text-gray-400">
+            <p className="text-xl text-gray-700">
               Engage with your community on your terms whilst sharing content
               with your members across multiple platforms.
             </p>
@@ -32,7 +31,7 @@ function Features() {
             {/* 1st item */}
             <Feature
               title="Own your platform"
-              description="Your content and community are the result of your dedicated work, why hand over ownership to a platform that can destroy all your hard work at any moment?  Instead take full custody of your creative work."
+              description="Your content and community are the result of your dedicated work, why hand over ownership to a platform that can remove your content at any moment?  Instead, take full custody of your creative work."
               image="https://place-hold.it/405/dadada"
               benefits={["Control your content", "Engage with your community"]}
             />

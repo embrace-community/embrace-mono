@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Roboto } from "next/font/google";
+import { Inter } from "next/font/google";
 import React from "react";
 
 interface FeatureProps {
@@ -10,7 +10,17 @@ interface FeatureProps {
   rtl?: boolean;
 }
 
-const roboto = Roboto({ weight: "400", subsets: ["latin"] });
+const tick = (
+  <svg
+    className="w-3 h-3 fill-current text-green-500 mr-2 shrink-0"
+    viewBox="0 0 12 12"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+  </svg>
+);
+
+const inter = Inter({ weight: "300", subsets: ["latin"] });
 
 function Feature({
   title,
@@ -19,17 +29,6 @@ function Feature({
   benefits = [],
   rtl = false,
 }: FeatureProps) {
-  console.log(benefits, "benefits");
-  const tick = (
-    <svg
-      className="w-3 h-3 fill-current text-green-500 mr-2 shrink-0"
-      viewBox="0 0 12 12"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-    </svg>
-  );
-
   return (
     <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
       {/* Image */}
@@ -66,13 +65,13 @@ function Feature({
           <h3
             className={classNames({
               "h3 mb-4": true,
-              [roboto.className]: true,
+              [inter.className]: true,
             })}
           >
             {title}
           </h3>
-          <p className="text-xl text-gray-400 mb-4 pl-1">{description}</p>
-          <ul className="text-lg text-gray-400 -mb-2  pl-1">
+          <p className="text-xl text-gray-700 mb-4 pl-1">{description}</p>
+          <ul className="text-lg text-gray-700 -mb-2  pl-1">
             {benefits.map((benefit) => (
               <li className="flex items-center mb-2">
                 {tick}
