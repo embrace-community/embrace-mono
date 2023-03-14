@@ -1,5 +1,7 @@
 import classNames from "classnames";
 import { Inter } from "next/font/google";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const inter = Inter({ weight: "300", subsets: ["latin-ext"] });
@@ -9,7 +11,7 @@ function Hero() {
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         {/* Hero content */}
-        <div className="relative pt-32 pb-10 md:pt-40 md:pb-16">
+        <div className="relative pt-36 pb-10 md:pt-56 md:pb-16">
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <h1
@@ -23,7 +25,7 @@ function Hero() {
             </h1>
             <h1
               className={classNames({
-                "h1 mb-0": true,
+                "h1 mb-36": true,
                 [inter.className]: true,
               })}
               data-aos="fade-up"
@@ -31,16 +33,14 @@ function Hero() {
               Embrace your community
             </h1>
 
-            <div className="max-w-xs mx-auto mt-28 sm:max-w-none sm:flex sm:justify-center ">
+            <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center ">
               <div data-aos="fade-up" data-aos-delay="400">
-                <a className="p-4 text-white bg-violet-600 hover:bg-violet-700 w-full mb-4 rounded-md sm:w-auto sm:mb-0">
+                <Link
+                  href={`/`}
+                  className="p-6 text-white bg-violet-600 hover:bg-violet-700 w-full mb-4 rounded-md sm:w-auto sm:mb-0"
+                >
                   Join the Movement
-                </a>
-              </div>
-              <div data-aos="fade-up" data-aos-delay="600">
-                <a className="p-4 text-white bg-gray-400 hover:bg-gray-500 w-full rounded-md sm:w-auto sm:ml-4">
-                  Docs
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -52,9 +52,9 @@ function Hero() {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <img
+              <Image
                 className="mx-auto rounded-md"
-                src={`https://place-hold.it/1024x504/dadada`}
+                src={`/images/illustration.png`}
                 width="1024"
                 height="504"
                 alt="Illustration"

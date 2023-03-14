@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { Inter } from "next/font/google";
+import Image from "next/image";
 import React from "react";
 
 interface FeatureProps {
@@ -41,7 +42,7 @@ function Feature({
         })}
         data-aos="fade-up"
       >
-        <img
+        <Image
           className={classNames({
             "max-w-full mx-auto md:max-w-none h-auto rounded-md ": true,
           })}
