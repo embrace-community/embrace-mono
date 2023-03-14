@@ -11,9 +11,9 @@ function Hero() {
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         {/* Hero content */}
-        <div className="relative pt-36 pb-10 md:pt-56 md:pb-16">
+        <div className="relative mt-36 mb-10 md:mt-56 md:mb-16">
           {/* Section header */}
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
+          <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
             <h1
               className={classNames({
                 "h1 mb-0": true,
