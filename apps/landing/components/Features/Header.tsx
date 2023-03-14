@@ -5,7 +5,7 @@ const inter = Inter({ weight: "300", subsets: ["latin"] });
 
 export default function Header() {
   return (
-    <div className="max-w-3xl mx-auto text-center pb-28 md:pb-28">
+    <div className="max-w-3xl mx-auto text-center mb-20 md:mb-28">
       <h1
         className={classNames({
           "h2 mb-4": true,
