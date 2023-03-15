@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-background": "url('/images/gradient-background.png')",
+        // "gradient-background": "url('/images/gradient-background.png')",
+        "gradient-background": "url('/images/bg.png')",
       },
       colors: {},
       spacing: {

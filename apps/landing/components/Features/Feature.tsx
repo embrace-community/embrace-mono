@@ -32,15 +32,14 @@ function Feature({
 }: FeatureProps) {
   return (
     <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
-      {/* Image */}
+      {/* MD Image */}
       <div
         className={classNames({
-          "max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-4 md:mb-0":
+          "hidden md:flex max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-4 md:mb-0":
             true,
           "md:order-1": !rtl,
           rtl: rtl,
         })}
-        data-aos="fade-up"
       >
         <Image
           className={classNames({
@@ -53,10 +52,7 @@ function Feature({
         />
       </div>
       {/* Content */}
-      <div
-        className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6"
-        data-aos="fade-right"
-      >
+      <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6">
         <div
           className={classNames({
             "md:pr-8 lg:pr-16 xl:pr-20": !rtl,
@@ -65,13 +61,34 @@ function Feature({
         >
           <h3
             className={classNames({
-              "h3 mb-4": true,
+              "text-2xl font-extrabold leading-tight tracking-tighter md:text-3xl mb-4":
+                true,
               [inter.className]: true,
             })}
           >
             {title}
           </h3>
+          {/* SM Image */}
+          <div
+            className={classNames({
+              "flex md:hidden max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-4 md:mb-0":
+                true,
+              "md:order-1": !rtl,
+              rtl: rtl,
+            })}
+          >
+            <Image
+              className={classNames({
+                "max-w-full mx-auto md:max-w-none h-auto rounded-md ": true,
+              })}
+              src={image}
+              width="540"
+              height="405"
+              alt="Feature"
+            />
+          </div>
           <p className="text-xl text-gray-700 mb-4 pl-1">{description}</p>
+
           <ul className="text-lg text-gray-700 -mb-2  pl-1">
             {benefits.map((benefit) => (
               <li className="flex items-center mb-2">
