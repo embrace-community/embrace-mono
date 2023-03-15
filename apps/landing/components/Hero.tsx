@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const inter = Inter({ weight: "300", subsets: ["latin-ext"] });
+const inter = Inter({ weight: "700", subsets: ["latin-ext"] });
 
 function Hero() {
   return (
@@ -16,7 +16,7 @@ function Hero() {
           <div className="max-w-3xl mx-auto text-center">
             <h1
               className={classNames({
-                "text-2xl font-extrabold leading-tight tracking-tighter md:text-5xl mb-0":
+                "text-2xl font-extrabold leading-tight tracking-tighter md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 mb-0":
                   true,
                 [inter.className]: true,
               })}
@@ -25,7 +25,7 @@ function Hero() {
             </h1>
             <h1
               className={classNames({
-                "text-2xl font-extrabold leading-tight tracking-tighter md:text-5xl mb-16 md:mb-36":
+                "text-2xl font-extrabold leading-tight tracking-tighter md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 mb-14 md:mb-24":
                   true,
                 [inter.className]: true,
               })}
@@ -37,7 +37,7 @@ function Hero() {
               <div>
                 <Link
                   href={`/`}
-                  className="p-6 text-white bg-violet-600 hover:bg-violet-700 w-full mb-4 rounded-md sm:w-auto sm:mb-0"
+                  className="p-6 text-white bg-gradient-to-r from-violet-600 to-indigo-500  hover:bg-gradient-to-r hover:from-violet-700 hover:to-indigo-600 w-full mb-4 rounded-md sm:w-auto sm:mb-0"
                 >
                   Join the Movement
                 </Link>
