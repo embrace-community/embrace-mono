@@ -10,7 +10,8 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <div
       className={classNames({
-        "bg-gradient-background bg-fixed text-gray-800 tracking-tight": true,
+        "bg-gradient-background bg-fixed bg-cover text-gray-800 tracking-tight":
+          true,
         [roboto.className]: true,
       })}
     >
