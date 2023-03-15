@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const inter = Inter({ weight: "300", subsets: ["latin-ext"] });
+const inter = Inter({ weight: "700", subsets: ["latin-ext"] });
 
 function Hero() {
   return (
@@ -16,28 +16,28 @@ function Hero() {
           <div className="max-w-3xl mx-auto text-center">
             <h1
               className={classNames({
-                "h3 md:h2 md:h1 mb-0": true,
+                "text-2xl font-extrabold leading-tight tracking-tighter md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 mb-0":
+                  true,
                 [inter.className]: true,
               })}
-              data-aos="fade-up"
             >
               Own your platform
             </h1>
             <h1
               className={classNames({
-                "h3 md:h2 md:h1 mb-16 md:mb-36": true,
+                "text-2xl font-extrabold leading-tight tracking-tighter md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 mb-14 md:mb-24":
+                  true,
                 [inter.className]: true,
               })}
-              data-aos="fade-up"
             >
               Embrace your community
             </h1>
 
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center ">
-              <div data-aos="fade-up" data-aos-delay="400">
+              <div>
                 <Link
                   href={`/`}
-                  className="p-6 text-white bg-violet-600 hover:bg-violet-700 w-full mb-4 rounded-md sm:w-auto sm:mb-0"
+                  className="p-6 text-white bg-gradient-to-r from-violet-600 to-indigo-500  hover:bg-gradient-to-r hover:from-violet-700 hover:to-indigo-600 w-full mb-4 rounded-md sm:w-auto sm:mb-0"
                 >
                   Join the Movement
                 </Link>
@@ -55,8 +55,8 @@ function Hero() {
               <Image
                 className="mx-auto rounded-md"
                 src={`/images/illustration.png`}
-                width="1024"
-                height="504"
+                width="800"
+                height="604"
                 alt="Illustration"
               />
             </div>

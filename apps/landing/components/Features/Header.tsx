@@ -8,7 +8,8 @@ export default function Header() {
     <div className="max-w-3xl mx-auto text-center mb-20 md:mb-28">
       <h1
         className={classNames({
-          "h2 mb-4": true,
+          "text-2xl font-extrabold leading-tight tracking-tighter md:text-4xl mb-4":
+            true,
           [inter.className]: true,
         })}
       >
