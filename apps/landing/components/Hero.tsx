@@ -36,7 +36,8 @@ function Hero() {
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center ">
               <div>
                 <Link
-                  href={`/`}
+                  target={"_blank"}
+                  href={`https://airtable.com/shrI1lJQCPsAujbVc`}
                   className="p-6 text-white bg-gradient-to-r from-violet-600 to-indigo-500  hover:bg-gradient-to-r hover:from-violet-700 hover:to-indigo-600 w-full mb-4 rounded-md sm:w-auto sm:mb-0"
                 >
                   Join the Movement
