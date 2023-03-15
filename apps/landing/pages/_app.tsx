@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import "@/styles/globals.css";
 import { Roboto } from "next/font/google";
 import classNames from "classnames";
-
+import ClientOnlyWrapper from "@/components/ClientOnlyWrapper";
 const roboto = Roboto({ weight: "300", subsets: ["latin"] });
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -15,7 +15,9 @@ export default function App({ Component, pageProps }: AppProps) {
         [roboto.className]: true,
       })}
     >
-      <Component {...pageProps} />
+      <ClientOnlyWrapper>
+        <Component {...pageProps} />
+      </ClientOnlyWrapper>
     </div>
   );
 }

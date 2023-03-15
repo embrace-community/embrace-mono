@@ -47,11 +47,7 @@ function Hero() {
 
           {/* Hero image */}
           <div className="mt-20 md:mt-28">
-            <div
-              className="relative flex justify-center items-center "
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
+            <div className="relative flex justify-center items-center">
               <Image
                 className="mx-auto rounded-md"
                 src={`/images/illustration.png`}
