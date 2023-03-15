@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import Feature from "./Feature";
+import FadeIn from "../Motion/FadeIn";
 
 interface Feature {
   title: string;
@@ -50,20 +51,25 @@ function Features() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="py-12 md:py-20">
           {/* Section header */}
-          <Header />
+
+          <FadeIn>
+            <Header />
+          </FadeIn>
 
           {/* Features */}
           <div className="grid gap-12 md:gap-20">
             {features.map((feature: Feature, index: number) => {
               return (
-                <Feature
-                  key={index}
-                  title={feature.title}
-                  description={feature.description}
-                  image={feature.image}
-                  benefits={feature.benefits}
-                  rtl={feature.rtl}
-                />
+                <FadeIn rotate={feature.rtl ? -1 : 1}>
+                  <Feature
+                    key={feature.title}
+                    title={feature.title}
+                    description={feature.description}
+                    image={feature.image}
+                    benefits={feature.benefits}
+                    rtl={feature.rtl}
+                  />
+                </FadeIn>
               );
             })}
           </div>

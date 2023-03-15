@@ -4,6 +4,7 @@ import Features from "../components/Features";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
+import FadeIn from "../components/Motion/FadeIn";
 
 export default function Home() {
   return (
@@ -21,10 +22,15 @@ export default function Home() {
       </Head>
 
       <div className="flex min-h-screen overflow-hidden">
-        <Header />
+        <FadeIn up={false}>
+          <Header />
+        </FadeIn>
 
         <main className="grow">
-          <Hero />
+          <FadeIn>
+            <Hero />
+          </FadeIn>
+
           <Features />
         </main>
 
