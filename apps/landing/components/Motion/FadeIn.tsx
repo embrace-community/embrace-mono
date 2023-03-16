@@ -29,7 +29,7 @@ export default function FadeIn({
         x: 0,
         rotate,
         animation,
-        opacity: [0, 0.5, 0.8, 1],
+        opacity: [0, 0.25, 0.5, 0.8, 1],
         transition,
       }}
       viewport={{
