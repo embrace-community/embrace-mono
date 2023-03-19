@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         // "gradient-background": "url('/images/gradient-background.png')",
-        "gradient-background": "url('/images/bg.png')",
+        "gradient-background": "url('/images/bg2.png')",
       },
       colors: {},
       spacing: {

@@ -60,7 +60,7 @@ function Features() {
           <div className="grid gap-12 md:gap-20">
             {features.map((feature: Feature, index: number) => {
               return (
-                <FadeIn rotate={feature.rtl ? -1 : 1}>
+                <FadeIn>
                   <Feature
                     key={feature.title}
                     title={feature.title}
