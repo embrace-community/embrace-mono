@@ -7,7 +7,7 @@ export default defineConfig((options: Options) => ({
 	format: ["esm"],
 	dts: true,
 	minify: true,
-	clean: false,
+	clean: false, // This is for Dev env as tsup takes a while to start
 	external: ["react"],
 	...options
 }));
