@@ -44,9 +44,9 @@ export default function Home() {
               <CallToAction label="Join the Movement" />
             </div>
           </FadeIn>
-        </main>
 
-        <Footer />
+          <Footer />
+        </main>
       </div>
     </>
   );
