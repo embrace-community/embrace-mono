@@ -21,6 +21,7 @@ contract EmbraceCommunities is ERC721URIStorage, ERC721Holder {
 
     event CommunityCreated(uint256 communityId, Visibility visibility, Access access, string communityMetaData);
 
+    // NOTE: May need to update - could make it so owner can change for upgradeability
     address immutable embraceCommunityAddress;
 
     string private baseUri;
@@ -33,8 +34,10 @@ contract EmbraceCommunities is ERC721URIStorage, ERC721Holder {
         string handle;
     }
 
+    // NOTE: Could be a mapping?
     Community[] private communities;
 
+    // NOTE: Founder -> Owner
     modifier onlyFounder(uint256 _communityId) {
         if (ownerOf(_communityId) != msg.sender) {
             revert ErrorNotCommunityOwner(_communityId, msg.sender);
@@ -42,6 +45,7 @@ contract EmbraceCommunities is ERC721URIStorage, ERC721Holder {
         _;
     }
 
+    // NOTE: Founder -> Owner
     function isFounder(uint256 _communityId, address _address) external view returns (bool) {
         if (ownerOf(_communityId) != _address) {
             return false;
@@ -77,8 +81,9 @@ contract EmbraceCommunities is ERC721URIStorage, ERC721Holder {
         // Stage 2 - clone ERC721 Community contract specific to this community - cheaper than deploying new contract
         address embraceCommunityClone = Clones.clone(embraceCommunityAddress);
         IEmbraceCommunity(embraceCommunityClone).initialize(
-            string.concat("EMBRACE_COMM_0.13 ", Strings.toString(newCommunityId)), // TODO: Change to community name / let UI determine this?
-            string.concat("EMB_COMM_0.13 ", Strings.toString(newCommunityId)),
+            // NOTE: Change to community name / let UI determine this?
+            string.concat("EMBRACE_COMMUNITY_", Strings.toString(newCommunityId)),
+            string.concat("EMB_COMM_", Strings.toString(newCommunityId)),
             msg.sender,
             address(this),
             newCommunityId,
@@ -102,7 +107,6 @@ contract EmbraceCommunities is ERC721URIStorage, ERC721Holder {
         // a) Mint NFT for community
         _mint(msg.sender, newCommunityId);
 
-        // So that CID is appended to the baseURI
         _setTokenURI(newCommunityId, _communityData.metadata);
 
         // Event for The Graph
@@ -133,15 +137,20 @@ contract EmbraceCommunities is ERC721URIStorage, ERC721Holder {
         return community;
     }
 
-    function updateCommunity(uint256 _communityId, CommunityData memory _CommunityData)
+    /// @notice Update community metadata
+    /// @param _communityId Community ID
+    /// @param _communityData Community data
+    /// @dev Only founder can update community metadata
+    /// @dev Community metadata is stored in the NFT contract
+    function updateCommunity(uint256 _communityId, CommunityData memory _communityData)
         public
         onlyFounder(_communityId)
     {
         Community memory community = communities[_communityId - 1];
 
-        IEmbraceCommunity(community.contractAddress).setCommunityData(_CommunityData);
+        IEmbraceCommunity(community.contractAddress).setCommunityData(_communityData);
 
-        _setTokenURI(_communityId, _CommunityData.metadata);
+        _setTokenURI(_communityId, _communityData.metadata);
     }
 
     function tokenURI(uint256 tokenId) public view virtual override(ERC721URIStorage) returns (string memory) {

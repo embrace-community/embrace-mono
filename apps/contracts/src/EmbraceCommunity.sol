@@ -19,6 +19,8 @@ error ErrorCannotRemoveFounderAdmin(address account);
 error ErrorNotMember(address account);
 error ErrorFounderCannotLeave(address account);
 
+// NOTE: Make ERC1155 for Admin and Member NFTs + also dynamic roles, for additional features i.e.
+// - Chat channel roles etc
 contract EmbraceCommunity is ERC721URIStorageUpgradeable, ERC721HolderUpgradeable {
     using CountersUpgradeable for CountersUpgradeable.Counter;
 
@@ -40,7 +42,7 @@ contract EmbraceCommunity is ERC721URIStorageUpgradeable, ERC721HolderUpgradeabl
     // Community Data related
     uint256 private communityId;
     string private handle;
-    uint128[] private apps; // TODO: Is apps needed?
+    // uint128[] private apps; // TODO: Is apps needed?
     string private metadata;
     Visibility private visibility;
     Access private access;
@@ -102,7 +104,7 @@ contract EmbraceCommunity is ERC721URIStorageUpgradeable, ERC721HolderUpgradeabl
 
         // Add Founder as first member
         _memberAdd(_founderAddress);
-        _adminAdd(_founderAddress);
+        // _adminAdd(_founderAddress);
     }
 
     // SETTER FUNCTIONS
@@ -179,7 +181,7 @@ contract EmbraceCommunity is ERC721URIStorageUpgradeable, ERC721HolderUpgradeabl
     function getCommunityData() public view returns (CommunityData memory) {
         return CommunityData({
             handle: handle,
-            apps: apps,
+            // apps: apps,
             metadata: metadata,
             visibility: visibility,
             access: access,
@@ -252,7 +254,7 @@ contract EmbraceCommunity is ERC721URIStorageUpgradeable, ERC721HolderUpgradeabl
 
     function _setCommunityData(CommunityData memory _communityData) private {
         handle = _communityData.handle;
-        apps = _communityData.apps;
+        // apps = _communityData.apps;
         metadata = _communityData.metadata;
         access = _communityData.access;
         visibility = _communityData.visibility;

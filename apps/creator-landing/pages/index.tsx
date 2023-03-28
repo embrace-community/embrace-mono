@@ -1,3 +1,5 @@
+import Technologies from "@/components/Technologies";
+import CallToAction from "@/components/CallToAction";
 import Head from "next/head";
 import React from "react";
 import Features from "../components/Features";
@@ -32,6 +34,16 @@ export default function Home() {
           </FadeIn>
 
           <Features />
+
+          <FadeIn up={false}>
+            <Technologies />
+          </FadeIn>
+
+          <FadeIn>
+            <div className="w-full text-center pb-6 md:pb-14 sm:w-auto">
+              <CallToAction label="Join the Movement" />
+            </div>
+          </FadeIn>
         </main>
 
         <Footer />
