@@ -1,13 +1,10 @@
-import classNames from "classnames";
-import { Inter } from "next/font/google";
 import Image from "next/image";
+import Highlight from "./Highlight";
 
-const inter = Inter({ weight: "300", subsets: ["latin"] });
-
-export default function Awards() {
+export default function Technologies() {
   return (
-    <div className="p-24 text-center mb-20 bg-slate-400 bg-opacity-10">
-      <div className="grid grid-cols-4">
+    <Highlight>
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
         <div className="mx-auto text-center">
           <Image
             src={`/images/logos/livepeer.png`}
@@ -47,6 +44,6 @@ export default function Awards() {
           />
         </div>
       </div>
-    </div>
+    </Highlight>
   );
 }
