@@ -49,7 +49,6 @@ function Hero() {
           <div className="mt-14 md:mt-20">
             <div className="relative flex justify-center items-center">
               <Image
-                className="mx-auto rounded-md"
                 src={`/images/illustration.png`}
                 width="800"
                 height="604"

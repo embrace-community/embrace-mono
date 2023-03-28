@@ -43,7 +43,7 @@ function Feature({
       >
         <Image
           className={classNames({
-            "max-w-full mx-auto md:max-w-none h-auto rounded-md ": true,
+            "max-w-full mx-auto md:max-w-none h-auto rounded-lg ": true,
           })}
           src={image}
           width="540"
