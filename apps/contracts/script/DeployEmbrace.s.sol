@@ -3,7 +3,6 @@ pragma solidity >=0.8.19;
 
 import "forge-std/Console.sol";
 import {Script} from "forge-std/Script.sol";
-import {EmbraceApps} from "../src/EmbraceApps.sol";
 import {EmbraceCommunities} from "../src/EmbraceCommunities.sol";
 import {EmbraceCommunity} from "../src/EmbraceCommunity.sol";
 import {AppCreations} from "../src/app/AppCreations.sol";
@@ -12,7 +11,6 @@ import {AppSocials} from "../src/app/AppSocials.sol";
 /// @dev See the Solidity Scripting tutorial: https://book.getfoundry.sh/tutorials/solidity-scripting
 contract Deploy is Script {
     address internal deployer;
-    EmbraceApps internal embraceApps;
     EmbraceCommunities internal embraceCommunities;
     EmbraceCommunity internal embraceCommunity;
     AppCreations internal appCreations;
@@ -43,14 +41,14 @@ contract Deploy is Script {
             address(embraceCommunity)
         );
 
-        embraceApps = new EmbraceApps();
+        // embraceApps = new EmbraceApps();
 
         appCreations = new AppCreations(address(embraceCommunities));
         appSocials = new AppSocials(address(embraceCommunities));
 
         console.log("CONTRACT_ADDRESS_COMMUNITY=\"%s\"", address(embraceCommunity));
         console.log("CONTRACT_ADDRESS_COMMUNITIES=\"%s\"", address(embraceCommunities));
-        console.log("CONTRACT_ADDRESS_APPS=\"%s\"", address(embraceApps));
+        // console.log("CONTRACT_ADDRESS_APPS=\"%s\"", address(embraceApps));
         console.log("CONTRACT_ADDRESS_APP_CREATIONS=\"%s\"", address(appCreations));
         console.log("CONTRACT_ADDRESS_APP_SOCIALS=\"%s\"", address(appSocials));
 

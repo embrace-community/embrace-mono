@@ -15,33 +15,37 @@ const features: Feature[] = [
   {
     title: "Own your platform",
     description:
-      "Your content and community are the result of your dedicated work, why hand over ownership to a platform that can remove your content at any moment?  Instead, take full custody of your creative work.",
+      "Your content and community are the result of your dedicated work, why not take full custody of your creative efforts?",
     image: `/images/creator.jpg`,
-    benefits: ["Control your content", "Engage with your community"],
+    benefits: [
+      "Your platform comes first",
+      "Engage with your community",
+      "Monetise your content",
+    ],
   },
   {
-    title: "Decentralised Technologies",
+    title: "Decentralisation",
     description:
-      "Web3 technologies enable decentralisation, empowering creatives by ensuring no centralised gatekeeper can censure your content or de-platform you. ",
+      "We utilise the latest technologies to decentralise ownership in order to empower creatives. This ensures no centralised gatekeeper can censure your content or de-platform you.",
     image: `/images/decentralised.png`,
     benefits: [
-      "No centralised gatekeepers",
       "Permissionless publishing",
-      "Blockchain based",
-      "IPFS hosted content",
+      "No centralised gatekeepers",
+      "Blockchain based, decentralised content",
     ],
     rtl: true,
   },
   {
     title: "Embrace your Community",
     description:
-      "Grow your community across multiple platforms and engage with members through your own community site.",
+      "Grow your community without boundaries and engage with members through your own community platform.",
     image: `/images/community.jpg`,
     benefits: [
-      "Grow your community",
-      "Engage with your members",
-      "Own your platform",
+      "Gather members across multiple platforms",
+      "Foster connection and engagement",
+      "Build a community around your content",
     ],
+    // Authentic / closer
   },
 ];
 

@@ -4,14 +4,13 @@ pragma solidity >=0.8.19;
 enum Visibility {
     LISTED,
     UNLISTED
-    // ,ANONYMOUS - Unlisted + all metadata is encrypted unless you are a member | founder
 }
+// ,ANONYMOUS - Unlisted + all metadata is encrypted unless you are a member | founder
 
 enum Access {
     OPEN, // Anyone can join
-    GATED, // Anyone can join if they meet the requirements
-    CLOSED, // Invite only
-    PASSWORD // Anyone can join if they have the password
+    GATED // Anyone can join if they meet the requirements
+        // CLOSED, // Invite only
 }
 
 enum MembershipGateToken {
@@ -41,6 +40,5 @@ struct CommunityData {
     Visibility visibility;
     Access access;
     MembershipGate membershipGate;
-    uint128[] apps;
     string metadata;
 }
