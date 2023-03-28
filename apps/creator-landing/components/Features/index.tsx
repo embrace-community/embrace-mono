@@ -52,16 +52,16 @@ const features: Feature[] = [
 function Features() {
   return (
     <section>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="w-full mx-auto">
         <div className="py-12 md:py-20">
           {/* Section header */}
 
-          <FadeIn>
+          <FadeIn up={false}>
             <Header />
           </FadeIn>
 
           {/* Features */}
-          <div className="grid gap-12 md:gap-20">
+          <div className="max-w-6xl mx-auto grid gap-12 md:gap-20">
             {features.map((feature: Feature, index: number) => {
               return (
                 <FadeIn>

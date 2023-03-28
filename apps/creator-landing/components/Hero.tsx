@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import { Inter } from "next/font/google";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
+import CallToAction from "./CallToAction";
 
 const inter = Inter({ weight: "700", subsets: ["latin-ext"] });
 const titleClasses =
@@ -41,14 +41,7 @@ function Hero() {
             </h1>
 
             <div className="w-full sm:w-auto">
-              <Link
-                target={"_blank"}
-                href={`https://airtable.com/shrI1lJQCPsAujbVc`}
-              >
-                <button className="p-6 text-white bg-gradient-to-r from-violet-600 to-indigo-500  hover:bg-gradient-to-r hover:from-violet-700 hover:to-indigo-600 rounded-md">
-                  Join the Movement
-                </button>
-              </Link>
+              <CallToAction label="Join the Movement" />
             </div>
           </div>
 
