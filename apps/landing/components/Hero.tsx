@@ -16,14 +16,26 @@ function Hero() {
           <div className="max-w-4xl mx-auto text-center">
             <h1
               className={classNames({
-                "text-2xl font-extrabold leading-tight tracking-tighter md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 mb-0":
-                  true,
                 [inter.className]: true,
               })}
             >
-              Own your platform
+              <span
+                className={classNames({
+                  "text-2xl font-extrabold leading-tight tracking-tighter md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 mb-0":
+                    true,
+                })}
+              >
+                Own your platform
+              </span>
               <br />
-              through decentralised technologies: Embrace your community
+              <span
+                className={classNames({
+                  "text-2xl font-extrabold leading-tight tracking-tighter md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 mb-0":
+                    true,
+                })}
+              >
+                Embrace your community
+              </span>
             </h1>
 
             <Link
