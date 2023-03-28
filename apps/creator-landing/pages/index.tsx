@@ -1,12 +1,12 @@
-import Technologies from "@/components/Technologies";
-import CallToAction from "@/components/CallToAction";
 import Head from "next/head";
 import React from "react";
-import Features from "../components/Features";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import Hero from "../components/Hero";
-import FadeIn from "../components/Motion/FadeIn";
+import Features from "@/components/Features";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import FadeIn from "@/components/Motion/FadeIn";
+import Technologies from "@/components/Technologies";
+import CallToAction from "@/components/CallToAction";
 
 export default function Home() {
   return (
