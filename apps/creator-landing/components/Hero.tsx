@@ -13,12 +13,12 @@ function Hero() {
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         {/* Hero content */}
-        <div className="relative mt-36 md:mt-56">
+        <div className="relative mt-36 md:mt-48">
           {/* Section header */}
           <div className="max-w-4xl mx-auto text-center">
             <h1
               className={classNames({
-                "mb-14": true,
+                "mb-12 md:mb-24": true,
                 [inter.className]: true,
               })}
             >
