@@ -31,7 +31,7 @@ function Feature({
   rtl = false,
 }: FeatureProps) {
   return (
-    <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
+    <div className="md:grid md:grid-cols-12 md:gap-6 items-center p-4">
       {/* MD Image */}
       <div
         className={classNames({
