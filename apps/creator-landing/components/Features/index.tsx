@@ -28,18 +28,6 @@ const features: Feature[] = [
     ],
   },
   {
-    title: "Decentralisation",
-    description:
-      "We utilise the latest technologies to decentralise ownership in order to empower creatives. This ensures no centralised gatekeeper can censure your content or de-platform you.",
-    image: `/images/decentralised.png`,
-    benefits: [
-      "Permissionless publishing",
-      "No centralised gatekeepers",
-      "Blockchain based, decentralised content",
-    ],
-    rtl: true,
-  },
-  {
     title: "Embrace your Community",
     description:
       "Grow your community without boundaries and engage with members through your own community platform.",
@@ -49,7 +37,19 @@ const features: Feature[] = [
       "Foster connection and engagement",
       "Build a community around your content",
     ],
-    // Authentic / closer
+    rtl: true,
+  },
+  {
+    title: "Decentralisation",
+    description:
+      "We utilise the latest technologies to decentralise power and ownership in order to empower creatives. This ensures no centralised gatekeeper can censure your content or de-platform you.",
+    image: "/images/decentralisation-diagram.png",
+    benefits: [
+      "Permissionless publishing",
+      "No centralised gatekeepers",
+      "Blockchain based, decentralised content",
+    ],
+    rtl: false,
   },
 ];
 
