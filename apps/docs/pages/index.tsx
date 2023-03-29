@@ -2,9 +2,8 @@ import { Button } from "ui";
 
 export default function Docs() {
 	return (
-		<div>
-			<h1 className="text-2xl">Docs</h1>
-			<Button />
+		<div className="bg-slate-900">
+			<Button variant="primary" size="large" label="Docs" />
 		</div>
 	);
 }
