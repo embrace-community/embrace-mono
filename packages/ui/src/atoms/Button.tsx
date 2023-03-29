@@ -19,9 +19,9 @@ export const Button = ({
 	return (
 		<button
 			className={classNames({
-				"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded":
+				"bg-blue-950 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded":
 					true,
-				"bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded":
+				"bg-green-600 hover:bg-green-700 shadow-xl shadow-green-600/30":
 					variant == "primary",
 				"text-sm": size === "small",
 				"text-md": size === "medium",
