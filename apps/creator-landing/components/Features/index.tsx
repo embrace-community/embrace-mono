@@ -7,7 +7,7 @@ import { Inter } from "next/font/google";
 
 const inter = Inter({ weight: "300", subsets: ["latin"] });
 
-interface Feature {
+interface IFeature {
   title: string;
   description: string;
   image: string;
@@ -15,7 +15,7 @@ interface Feature {
   rtl?: boolean;
 }
 
-const features: Feature[] = [
+const features: IFeature[] = [
   {
     title: "Own your platform",
     description:
@@ -80,11 +80,10 @@ function Features() {
 
           {/* Features */}
           <div className="max-w-6xl mx-auto grid gap-12 md:gap-20">
-            {features.map((feature: Feature, index: number) => {
+            {features.map((feature: IFeature, index: number) => {
               return (
-                <FadeIn>
+                <FadeIn key={index}>
                   <Feature
-                    key={feature.title}
                     title={feature.title}
                     description={feature.description}
                     image={feature.image}

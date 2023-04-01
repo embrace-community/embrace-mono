@@ -90,8 +90,8 @@ function Feature({
           <p className="text-xl text-gray-700 mb-4 pl-1">{description}</p>
 
           <ul className="text-lg text-gray-700 -mb-2  pl-1">
-            {benefits.map((benefit) => (
-              <li className="flex items-center mb-2">
+            {benefits.map((benefit: string, index: number) => (
+              <li className="flex items-center mb-2" key={index}>
                 {tick}
                 <span>{benefit}</span>
               </li>

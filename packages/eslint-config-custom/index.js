@@ -1,11 +1,5 @@
 module.exports = {
-	extends: [
-		"eslint:recommended",
-		"next/babel",
-		"next/core-web-vitals",
-		"turbo",
-		"prettier"
-	],
+	extends: ["eslint:recommended", "next/core-web-vitals", "turbo", "prettier"],
 	parserOptions: {
 		ecmaVersion: 2022,
 		sourceType: "module",
