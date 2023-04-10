@@ -61,7 +61,7 @@ function Features() {
           {/* Section header */}
 
           <FadeIn up={false}>
-            <Highlight>
+            <Highlight className="mb-14 md:mb-20">
               <h1
                 className={classNames({
                   "text-2xl font-extrabold leading-tight tracking-tighter md:text-4xl mb-4":
