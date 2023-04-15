@@ -3,7 +3,7 @@ import Highlight from "./Highlight";
 
 export default function Technologies() {
   return (
-    <Highlight>
+    <Highlight className="mb-14 md:mb-20">
       <div className="max-w-6xl mx-auto grid grid-cols-2 gap-8 md:gap-12 md:grid-cols-4">
         <div className="mx-auto text-center">
           <Image

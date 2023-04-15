@@ -1,12 +1,13 @@
 import classNames from "classnames";
-import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 import Image from "next/image";
 import React from "react";
 import CallToAction from "./CallToAction";
 
-const inter = Inter({ weight: "700", subsets: ["latin-ext"] });
+const manrope = Manrope({ weight: "800", subsets: ["latin-ext"] });
+
 const titleClasses =
-  "text-2xl font-extrabold leading-tight tracking-tighter md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-fuchsia-500 to-violet-500";
+  "text-2xl text- font-extrabold leading-tight tracking-tighter md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-fuchsia-500 to-violet-500";
 
 function Hero() {
   return (
@@ -19,7 +20,7 @@ function Hero() {
             <h1
               className={classNames({
                 "mb-12 md:mb-24": true,
-                [inter.className]: true,
+                [manrope.className]: true,
               })}
             >
               <span
@@ -27,7 +28,7 @@ function Hero() {
                   [titleClasses]: true,
                 })}
               >
-                Own your platform
+                Own your content
                 {/* on decentralised infrastructure */}
               </span>
               <br />

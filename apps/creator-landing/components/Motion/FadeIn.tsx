@@ -1,7 +1,8 @@
 import { motion, Transition } from "framer-motion";
+import { ReactNode } from "react";
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
   up?: boolean;
   animation?: string;
   transition?: Transition;

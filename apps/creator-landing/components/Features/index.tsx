@@ -3,11 +3,11 @@ import Feature from "./Feature";
 import FadeIn from "../Motion/FadeIn";
 import Highlight from "../Highlight";
 import classNames from "classnames";
-import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 
-const inter = Inter({ weight: "300", subsets: ["latin"] });
+const manrope = Manrope({ weight: "300", subsets: ["latin"] });
 
-interface Feature {
+interface IFeature {
   title: string;
   description: string;
   image: string;
@@ -15,9 +15,9 @@ interface Feature {
   rtl?: boolean;
 }
 
-const features: Feature[] = [
+const features: IFeature[] = [
   {
-    title: "Own your platform",
+    title: "Own your content",
     description:
       "Your content and community are the result of your dedicated work, why not take full custody of your creative efforts?",
     image: `/images/creator.jpg`,
@@ -61,12 +61,12 @@ function Features() {
           {/* Section header */}
 
           <FadeIn up={false}>
-            <Highlight>
+            <Highlight className="mb-14 md:mb-20">
               <h1
                 className={classNames({
-                  "text-2xl font-extrabold leading-tight tracking-tighter md:text-4xl mb-4":
+                  "text-2xl tracking-tighter font-extrabold md:text-4xl mb-4":
                     true,
-                  [inter.className]: true,
+                  [manrope.className]: true,
                 })}
               >
                 Put your Community first
@@ -80,11 +80,10 @@ function Features() {
 
           {/* Features */}
           <div className="max-w-6xl mx-auto grid gap-12 md:gap-20">
-            {features.map((feature: Feature, index: number) => {
+            {features.map((feature: IFeature, index: number) => {
               return (
-                <FadeIn>
+                <FadeIn key={index}>
                   <Feature
-                    key={feature.title}
                     title={feature.title}
                     description={feature.description}
                     image={feature.image}

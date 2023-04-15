@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 import Image from "next/image";
 import React from "react";
 
@@ -21,7 +21,7 @@ const tick = (
   </svg>
 );
 
-const inter = Inter({ weight: "300", subsets: ["latin"] });
+const manrope = Manrope({ weight: "300", subsets: ["latin-ext"] });
 
 function Feature({
   title,
@@ -63,7 +63,7 @@ function Feature({
             className={classNames({
               "text-2xl font-extrabold leading-tight tracking-tighter md:text-3xl mb-4":
                 true,
-              [inter.className]: true,
+              [manrope.className]: true,
             })}
           >
             {title}
@@ -90,8 +90,8 @@ function Feature({
           <p className="text-xl text-gray-700 mb-4 pl-1">{description}</p>
 
           <ul className="text-lg text-gray-700 -mb-2  pl-1">
-            {benefits.map((benefit) => (
-              <li className="flex items-center mb-2">
+            {benefits.map((benefit: string, index: number) => (
+              <li className="flex items-center mb-2" key={index}>
                 {tick}
                 <span>{benefit}</span>
               </li>
