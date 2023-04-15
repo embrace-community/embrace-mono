@@ -3,9 +3,14 @@ import Feature from "./Feature";
 import FadeIn from "../Motion/FadeIn";
 import Highlight from "../Highlight";
 import classNames from "classnames";
-import { Inter } from "next/font/google";
+import { Inter, Manrope, Comfortaa } from "next/font/google";
 
 const inter = Inter({ weight: "300", subsets: ["latin"] });
+const manrope = Manrope({ weight: "300", subsets: ["latin"] });
+const comfortaa = Comfortaa({
+  weight: "300",
+  subsets: ["latin"],
+});
 
 interface IFeature {
   title: string;
@@ -17,7 +22,7 @@ interface IFeature {
 
 const features: IFeature[] = [
   {
-    title: "Own your platform",
+    title: "Own your content",
     description:
       "Your content and community are the result of your dedicated work, why not take full custody of your creative efforts?",
     image: `/images/creator.jpg`,
@@ -64,9 +69,9 @@ function Features() {
             <Highlight>
               <h1
                 className={classNames({
-                  "text-2xl font-extrabold leading-tight tracking-tighter md:text-4xl mb-4":
+                  "text-2xl tracking-tighter font-extrabold md:text-4xl mb-4":
                     true,
-                  [inter.className]: true,
+                  [manrope.className]: true,
                 })}
               >
                 Put your Community first
