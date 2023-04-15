@@ -5,7 +5,7 @@ import Highlight from "./Highlight";
 function Footer() {
   return (
     <footer>
-      <Highlight>
+      <Highlight className="mt-6">
         <div className="flex justify-center items-center mx-auto max-w-xl">
           <h3 className="text-2xl font-extrabold leading-tight tracking-tighter md:text-3xl">
             Get in touch

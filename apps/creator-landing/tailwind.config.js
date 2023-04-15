@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
@@ -9,7 +10,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         // "gradient-background": "url('/images/gradient-background.png')",
-        "gradient-background": "url('/images/bg2.png')",
+        "gradient-background": "url('/images/bg3.png')",
       },
       colors: {},
       spacing: {
