@@ -8,6 +8,7 @@
 	],
 	"scripts": {
 		"build": "turbo run build",
+		"build:landing": "turbo run build --filter creator-landing",
 		"dev": "turbo run dev",
 		"dev:landing": "turbo run dev --filter creator-landing",
 		"lint": "turbo run lint",

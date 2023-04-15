@@ -3,14 +3,9 @@ import Feature from "./Feature";
 import FadeIn from "../Motion/FadeIn";
 import Highlight from "../Highlight";
 import classNames from "classnames";
-import { Inter, Manrope, Comfortaa } from "next/font/google";
+import { Manrope } from "next/font/google";
 
-const inter = Inter({ weight: "300", subsets: ["latin"] });
 const manrope = Manrope({ weight: "300", subsets: ["latin"] });
-const comfortaa = Comfortaa({
-  weight: "300",
-  subsets: ["latin"],
-});
 
 interface IFeature {
   title: string;

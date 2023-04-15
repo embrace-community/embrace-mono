@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Inter, Manrope } from "next/font/google";
+import { Manrope } from "next/font/google";
 import Image from "next/image";
 import React from "react";
 
