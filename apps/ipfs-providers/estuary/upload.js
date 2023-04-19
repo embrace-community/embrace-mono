@@ -24,5 +24,5 @@ axios(config)
 		console.log(JSON.stringify(response.data));
 	})
 	.catch((error) => {
-		console.log(error.code, error.statusCode, error.message, "/ Is API Down?");
+		console.error(error.code, error.message, "/ Is API Down?");
 	});
