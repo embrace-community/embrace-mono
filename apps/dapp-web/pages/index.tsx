@@ -1,9 +1,6 @@
-import { Button } from "ui";
+// import Image from "next/image";
+import { Layout } from "ui";
 
 export default function Web() {
-	return (
-		<div className="bg-slate-950">
-			<Button variant="primary" size="large" label="Web" />
-		</div>
-	);
+	return <Layout>test</Layout>;
 }
