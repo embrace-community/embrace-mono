@@ -11,6 +11,7 @@
 		"build:landing": "turbo run build --filter creator-landing",
 		"dev": "turbo run dev",
 		"dev:landing": "turbo run dev --filter creator-landing",
+		"dev:web": "turbo run dev --filter dapp-web",
 		"lint": "turbo run lint",
 		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
 		"test": "turbo run test"
