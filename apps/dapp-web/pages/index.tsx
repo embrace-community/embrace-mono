@@ -5,6 +5,7 @@ import { Button } from "ui";
 export default function Web() {
 	const [username, setUsername] = useState("");
 	const [channels, setChannels] = useState([]);
+	const [playlistItems, setPlaylistItems] = useState([]);
 
 	async function onGetChannels() {
 		if (!username) return;
@@ -15,9 +16,25 @@ export default function Web() {
 			);
 			const channelListResp = await channelListResponse.json();
 
-			setChannels(channelListResp.data?.items || []);
+			const items = channelListResp.data?.items || [];
+
+			setChannels(items);
+
+			if (items.length === 0) return;
+
+			const playlistId = items[0]?.contentDetails?.relatedPlaylists?.uploads;
+
+			console.log("playlistId", playlistId);
+
+			const videoListResponse = await fetch(
+				`/api/youtube/playlistitems?playlistid=${playlistId}`
+			);
+			const videoListResp = await videoListResponse.json();
+
+			setPlaylistItems(videoListResp.data?.items || []);
 		} catch (err: any) {
 			console.error(err.message);
+			alert(err.message);
 		}
 	}
 
@@ -53,25 +70,33 @@ export default function Web() {
 				/>
 			</div>
 
-			<div>
+			<div className="mb-8">
 				<h2 className="text-2xl mb-4">Channels</h2>
 
-				<div className="flex">
+				<div className="flex flex-wrap">
 					{channels.map((channel) => {
 						return (
 							<div key={channel.id} className="border rounded p-2">
 								<span className="block">Title: {channel.snippet.title}</span>
 								<span className="block">ID: {channel.id}</span>
 								<span className="block">
-									Subscribers: {channel.statistics.subscriberCount}
+									Subscribers:{" "}
+									{parseInt(
+										channel.statistics.subscriberCount
+									)?.toLocaleString()}
 								</span>
 								<span className="block">
-									Views: {channel.statistics.viewCount}
+									Views:{" "}
+									{parseInt(channel.statistics.viewCount)?.toLocaleString()}
 								</span>
 								<span className="block">
-									Videos: {channel.statistics.videoCount}
+									Videos:{" "}
+									{parseInt(channel.statistics.videoCount)?.toLocaleString()}
 								</span>
-								<p>{channel.snippet.description}</p>
+
+								<p className="max-w-[30rem] py-4">
+									{channel.snippet.description}
+								</p>
 
 								<div className="py-2">
 									<hr />
@@ -85,6 +110,31 @@ export default function Web() {
 								>
 									Visit Channel
 								</Link>
+							</div>
+						);
+					})}
+				</div>
+			</div>
+
+			<div>
+				<h2 className="text-2xl mb-4">Latest Videos</h2>
+
+				<div className="flex flex-wrap">
+					{playlistItems?.map((item) => {
+						const videoId = item.snippet?.resourceId?.videoId;
+
+						return (
+							<div key={item.id} className="min-w-[30rem] m-2">
+								<div className="col s3">
+									<iframe
+										width="100%"
+										height="auto"
+										src={`https://www.youtube.com/embed/${videoId}`}
+										frameBorder="0"
+										allow="autoplay; encrypted-media"
+										allowFullScreen
+									></iframe>
+								</div>
 							</div>
 						);
 					})}
