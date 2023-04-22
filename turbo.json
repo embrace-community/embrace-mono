@@ -1,21 +1,25 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
-  "pipeline": {
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**", "storybook-static/**"]
-    },
-    "lint": {
-      "outputs": []
-    },
-    "dev": {
-      "cache": false
-    },
-    "test": {
-      "cache": true
-    },
-    "prettier": {},
-    "deploy": {}
-  }
+	"$schema": "https://turbo.build/schema.json",
+	"globalDependencies": ["**/.env.*local"],
+	"pipeline": {
+		"build": {
+			"dependsOn": ["^build"],
+			"outputs": ["dist/**", ".next/**", "storybook-static/**"]
+		},
+		"lint": {
+			"outputs": []
+		},
+		"dev": {
+			"cache": false
+		},
+		"test": {
+			"cache": true
+		},
+		"prettier": {},
+		"deploy": {},
+		"dev:web": {
+			"outputs": ["dist/**", ".next/**"],
+			"env": ["NEXT_PUBLIC_OAUTH_CLIENT_ID"]
+		}
+	}
 }
