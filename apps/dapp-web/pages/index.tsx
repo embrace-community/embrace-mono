@@ -1,6 +1,10 @@
 // import Image from "next/image";
-import { Layout } from "ui";
+import { CreateCommunity, Layout } from "ui";
 
 export default function Web() {
-	return <Layout>test</Layout>;
+	return (
+		<Layout>
+			<CreateCommunity />
+		</Layout>
+	);
 }
