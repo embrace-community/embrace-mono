@@ -1,9 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { NavigationAction } from "./NavigationAction";
 import { NavigationDivider } from "./NavigationDivider";
-
 import { UsersThree, ShootingStar, Plus } from "@phosphor-icons/react";
-import Image from "next/image";
 
 export const Navigation = () => {
 	return (
@@ -17,11 +16,17 @@ export const Navigation = () => {
 				/>
 			</Link>
 			<NavigationDivider />
-			<NavigationAction icon={<UsersThree size={38} />} />
-			<NavigationAction icon={<ShootingStar size={38} />} />
+
+			<NavigationAction icon={<UsersThree size={38} />} href="/" />
+
+			<NavigationAction
+				icon={<ShootingStar size={38} />}
+				href="/explore-creations"
+			/>
+
 			<NavigationDivider />
 			<Link href="create">
-				<NavigationAction icon={<Plus size={38} />} active />
+				<NavigationAction icon={<Plus size={38} />} href="/create" />
 			</Link>
 		</div>
 	);
