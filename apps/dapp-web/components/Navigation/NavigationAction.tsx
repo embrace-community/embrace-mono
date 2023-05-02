@@ -11,8 +11,9 @@ interface Props {
 	icon: ReactElement<IconProps>;
 	active?: boolean;
 	href: string;
+	text?: string;
 }
-export const NavigationAction = ({ icon, href }: Props) => {
+export const NavigationAction = ({ icon, href, text }: Props) => {
 	const router = useRouter();
 	if (!router) return null;
 
@@ -22,15 +23,16 @@ export const NavigationAction = ({ icon, href }: Props) => {
 		<Link href={href}>
 			<div
 				className={classNames({
-					"w-16 h-16 rounded-full border-neutral-300 border-[1px] cursor-pointer":
+					"p-3 rounded-full gap-2 border-neutral-300 border-[1px] cursor-pointer flex justify-start items-center":
 						true,
-					"bg-primary-200 border-primary-700 ring-offset-0 ring-2 ring-primary-700 text-neutral-50 ":
+					"bg-neutral-100 border-primary-700 ring-offset-0 ring-1 ring-primary-700 text-primary-700 ":
 						active,
 					"text-neutral-800 hover:border-neutral-400 hover:ring-offset-0 hover:ring-1 hover:ring-primary-700 hover:bg-neutral-50":
 						!active
 				})}
 			>
-				<div className="p-3">{icon}</div>
+				<div>{icon}</div>
+				<div className="hidden">{text}</div>
 			</div>
 		</Link>
 	);
