@@ -1,4 +1,3 @@
-import Image from "next/image";
 import classNames from "classnames";
 import { Inter } from "next/font/google";
 
