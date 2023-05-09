@@ -4,5 +4,10 @@ module.exports = {
 	// prefix ui lib classes to avoid conflicting with the app
 	// prefix: "ui-",
 	content: ["./src/**/*.{js,ts,jsx,tsx}"],
+	theme: {
+		extend: {
+			// dropShadow: {}
+		}
+	},
 	...sharedConfig
 };
