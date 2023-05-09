@@ -6,7 +6,7 @@ const manrope = Manrope({ subsets: ["latin"], weight: "300" });
 
 export default function Principles() {
 	return (
-		<div
+		<article
 			id="principles"
 			className="flex flex-col gap-4 bg-gradient-to-b from-primary/40 px-3 py-2"
 		>
@@ -18,14 +18,14 @@ export default function Principles() {
 			>
 				Our Principles
 			</h2>
-			<div className="mx-auto">
+			<section className="mx-auto">
 				<Image
 					src={"/images/principles-large.png"}
 					width={800}
 					height={500}
 					alt="Principles"
 				/>
-			</div>
-		</div>
+			</section>
+		</article>
 	);
 }

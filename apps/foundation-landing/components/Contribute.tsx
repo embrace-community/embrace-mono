@@ -34,9 +34,9 @@ const manrope = Manrope({ subsets: ["latin"], weight: "300" });
 
 export default function Contribute() {
 	return (
-		<div
+		<article
 			id="contribute"
-			className="flex hidden flex-col gap-4 bg-gradient-to-b from-primary/40 p-3"
+			className="flex flex-col gap-4 bg-gradient-to-b from-primary/40 p-3"
 		>
 			<h2
 				className={classNames({
@@ -46,11 +46,11 @@ export default function Contribute() {
 			>
 				Contribute
 			</h2>
-			<div className="flex flex-col gap-4 lg:m-4 lg:flex-row">
+			<section className="flex flex-col gap-4 lg:m-4 lg:flex-row">
 				{features.map((item, index) => (
 					<Feature item={item} key={index} />
 				))}
-			</div>
-		</div>
+			</section>
+		</article>
 	);
 }

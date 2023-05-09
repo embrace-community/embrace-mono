@@ -34,7 +34,7 @@ const manrope = Manrope({ subsets: ["latin"], weight: "300" });
 
 export default function Mission() {
 	return (
-		<div id="mission" className="flex flex-col gap-4 p-3">
+		<article id="mission" className="flex flex-col gap-4 p-3">
 			<h2
 				className={classNames({
 					"text-2xl tracking-tight md:text-3xl": true,
@@ -43,11 +43,11 @@ export default function Mission() {
 			>
 				Our Mission
 			</h2>
-			<div className="flex flex-col gap-4 lg:m-4 lg:flex-row">
+			<section className="flex flex-col gap-4 lg:m-4 lg:flex-row">
 				{features.map((item, index) => (
 					<Feature item={item} key={index} />
 				))}
-			</div>
-		</div>
+			</section>
+		</article>
 	);
 }

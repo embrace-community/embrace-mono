@@ -19,7 +19,7 @@ const inter = Inter({ subsets: ["latin"], weight: ["300", "600"] });
 
 export function Feature({ item }: Props) {
 	return (
-		<div className="m-2 flex flex-1 flex-col items-center gap-4 sm:mx-36 lg:mx-2">
+		<section className="m-2 flex flex-1 flex-col items-center gap-4 sm:mx-36 lg:mx-2">
 			<div className="h-20 w-20 rounded-full bg-primary">{item.icon}</div>
 			<h3
 				className={classNames({
@@ -48,6 +48,6 @@ export function Feature({ item }: Props) {
 			>
 				{item.description}
 			</p>
-		</div>
+		</section>
 	);
 }

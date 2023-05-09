@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"], weight: "200" });
 
 export default function Navigation() {
 	return (
-		<div className="flex flex-row items-center justify-center gap-4 border-b-[1px] border-b-light p-3 sm:justify-start">
+		<header className="flex flex-row items-center justify-center gap-4 border-b-[1px] border-b-light p-3 sm:justify-start">
 			<Image
 				src="/images/embrace-foundation.png"
 				className="sm:hidden"
@@ -32,7 +32,7 @@ export default function Navigation() {
 				embrace community
 			</h1>
 
-			<div className="hidden md:flex md:grow md:flex-row md:justify-end md:gap-4">
+			<nav className="hidden md:flex md:grow md:flex-row md:justify-end md:gap-4">
 				<a
 					href="#principles"
 					className={classNames({
@@ -72,7 +72,7 @@ export default function Navigation() {
 				>
 					contribute
 				</a>
-			</div>
-		</div>
+			</nav>
+		</header>
 	);
 }

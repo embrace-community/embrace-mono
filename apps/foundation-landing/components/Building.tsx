@@ -52,7 +52,7 @@ const apps: IApp[] = [
 
 export default function Building() {
 	return (
-		<div id="apps" className="flex flex-col gap-4 p-3">
+		<article id="apps" className="flex flex-col gap-4 p-3">
 			<h2
 				className={classNames({
 					"text-2xl tracking-tight md:text-3xl": true,
@@ -61,11 +61,11 @@ export default function Building() {
 			>
 				We&apos;re Building
 			</h2>
-			<div className="mx-auto flex flex-col gap-3">
+			<section className="mx-auto flex flex-col gap-3">
 				{apps.map((app, index) => (
 					<App app={app} key={index} />
 				))}
-			</div>
-		</div>
+			</section>
+		</article>
 	);
 }
