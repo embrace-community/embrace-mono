@@ -8,12 +8,12 @@ export default function Principles() {
 	return (
 		<div
 			id="principles"
-			className="flex flex-col py-2 px-3 gap-4 bg-gradient-to-b from-primary/40"
+			className="flex flex-col gap-4 bg-gradient-to-b from-primary/40 px-3 py-2"
 		>
 			<h2
 				className={classNames({
-					"text-2xl md:text-3xl text-center tracking-tight": true,
-					[manrope.className]: true
+					"text-center text-2xl tracking-tight md:text-3xl": true,
+					[manrope.className]: true,
 				})}
 			>
 				Our Principles

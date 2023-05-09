@@ -19,12 +19,12 @@ const inter = Inter({ subsets: ["latin"], weight: ["300", "600"] });
 
 export function Feature({ item }: Props) {
 	return (
-		<div className="flex flex-1 flex-col gap-4 items-center m-2 sm:mx-36 lg:mx-2">
-			<div className="w-20 h-20 bg-primary rounded-full">{item.icon}</div>
+		<div className="m-2 flex flex-1 flex-col items-center gap-4 sm:mx-36 lg:mx-2">
+			<div className="h-20 w-20 rounded-full bg-primary">{item.icon}</div>
 			<h3
 				className={classNames({
-					"text-xl md:text-2xl tracking-tight antialiased": true,
-					[manrope.className]: true
+					"text-xl tracking-tight antialiased md:text-2xl": true,
+					[manrope.className]: true,
 				})}
 			>
 				{item.title}
@@ -32,8 +32,9 @@ export function Feature({ item }: Props) {
 
 			<p
 				className={classNames({
-					"text-sm md:text-base font-semibold tracking-tight antialiased": true,
-					[inter.className]: true
+					"text-sm font-semibold tracking-tight antialiased md:text-base":
+						true,
+					[inter.className]: true,
 				})}
 			>
 				<span className="whitespace-pre">{item.caption}</span>
@@ -41,8 +42,8 @@ export function Feature({ item }: Props) {
 
 			<p
 				className={classNames({
-					"text-sm md:text-base tracking-tight antialiased": true,
-					[inter.className]: true
+					"text-sm tracking-tight antialiased md:text-base": true,
+					[inter.className]: true,
 				})}
 			>
 				{item.description}

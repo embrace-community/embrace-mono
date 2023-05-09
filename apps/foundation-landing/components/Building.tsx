@@ -25,7 +25,7 @@ const apps: IApp[] = [
 		),
 		title: "Creator",
 		description:
-			"As technology continues to proliferate society we need to prioritise the health of our communities above all.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non risus eget ex luctus pulvinar. Phasellus nulla dui, ornare ac nulla id, aliquet pharetra sem. "
+			"As technology continues to proliferate society we need to prioritise the health of our communities above all.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non risus eget ex luctus pulvinar. Phasellus nulla dui, ornare ac nulla id, aliquet pharetra sem. ",
 	},
 	{
 		icon: (
@@ -46,17 +46,17 @@ const apps: IApp[] = [
 		),
 		title: "Tribe",
 		description:
-			"As technology continues to proliferate society we need to prioritise the health of our communities above all.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non risus eget ex luctus pulvinar. Phasellus nulla dui, ornare ac nulla id, aliquet pharetra sem. "
-	}
+			"As technology continues to proliferate society we need to prioritise the health of our communities above all.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non risus eget ex luctus pulvinar. Phasellus nulla dui, ornare ac nulla id, aliquet pharetra sem. ",
+	},
 ];
 
 export default function Building() {
 	return (
-		<div id="apps" className="flex flex-col p-3 gap-4">
+		<div id="apps" className="flex flex-col gap-4 p-3">
 			<h2
 				className={classNames({
-					"text-2xl md:text-3xl tracking-tight": true,
-					[manrope.className]: true
+					"text-2xl tracking-tight md:text-3xl": true,
+					[manrope.className]: true,
 				})}
 			>
 				We&apos;re Building

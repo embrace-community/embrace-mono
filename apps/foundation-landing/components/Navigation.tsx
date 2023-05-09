@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"], weight: "200" });
 
 export default function Navigation() {
 	return (
-		<div className="flex flex-row gap-4 p-3 justify-center items-center sm:justify-start border-b-light border-b-[1px]">
+		<div className="flex flex-row items-center justify-center gap-4 border-b-[1px] border-b-light p-3 sm:justify-start">
 			<Image
 				src="/images/embrace-foundation.png"
 				className="sm:hidden"
@@ -25,19 +25,19 @@ export default function Navigation() {
 
 			<h1
 				className={classNames({
-					"text-2xl md:text-3xl tracking-tight": true,
-					[inter.className]: true
+					"text-2xl tracking-tight md:text-3xl": true,
+					[inter.className]: true,
 				})}
 			>
 				embrace community
 			</h1>
 
-			<div className="hidden md:flex md:flex-row md:grow md:gap-4 md:justify-end">
+			<div className="hidden md:flex md:grow md:flex-row md:justify-end md:gap-4">
 				<a
 					href="#principles"
 					className={classNames({
 						"text-dark": true,
-						[inter.className]: true
+						[inter.className]: true,
 					})}
 				>
 					principles
@@ -47,7 +47,7 @@ export default function Navigation() {
 					href="#mission"
 					className={classNames({
 						"text-dark": true,
-						[inter.className]: true
+						[inter.className]: true,
 					})}
 				>
 					mission
@@ -57,7 +57,7 @@ export default function Navigation() {
 					href="#apps"
 					className={classNames({
 						"text-dark": true,
-						[inter.className]: true
+						[inter.className]: true,
 					})}
 				>
 					apps
@@ -67,7 +67,7 @@ export default function Navigation() {
 					href="#contribute"
 					className={classNames({
 						"text-dark": true,
-						[inter.className]: true
+						[inter.className]: true,
 					})}
 				>
 					contribute
