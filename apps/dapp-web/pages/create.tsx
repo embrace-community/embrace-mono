@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { CreateCommunity } from "../components/CreateCommunity";
 import { Layout } from "../components/Layout";
 
@@ -5,8 +6,13 @@ import { Layout } from "../components/Layout";
 
 export default function Create() {
 	return (
-		<Layout title="Create Community">
-			<CreateCommunity />
-		</Layout>
+		<>
+			<Head>
+				<title>Embrace: Creator</title>
+			</Head>
+			<Layout title="Create Community">
+				<CreateCommunity />
+			</Layout>
+		</>
 	);
 }

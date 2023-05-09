@@ -6,12 +6,12 @@ import { UsersThree, ShootingStar, Plus } from "@phosphor-icons/react";
 
 export const Navigation = () => {
 	return (
-		<div className="w-24 flex flex-col gap-3 items-center py-4 px-4 flex-grow-0 border-r-[1px] border-neutral-300 bg-gradient-to-r from-white from-10% to-neutral-100/20">
+		<div className="w-[104px] flex flex-col gap-3 items-center py-4 px-4 flex-grow-0 border-r-[1px] border-neutral-300 bg-gradient-to-r from-white from-10% to-neutral-100/20">
 			<Link href="/">
 				<Image
 					src="/images/creator-app.png"
-					width={80}
-					height={80}
+					width={120}
+					height={120}
 					alt="Embrace"
 				/>
 			</Link>
