@@ -44,16 +44,6 @@ export default function Navigation() {
 				</a>
 
 				<a
-					href="#values"
-					className={classNames({
-						"text-dark": true,
-						[inter.className]: true,
-					})}
-				>
-					core values
-				</a>
-
-				<a
 					href="#apps"
 					className={classNames({
 						"text-dark": true,
@@ -61,6 +51,16 @@ export default function Navigation() {
 					})}
 				>
 					apps
+				</a>
+
+				<a
+					href="#values"
+					className={classNames({
+						"text-dark": true,
+						[inter.className]: true,
+					})}
+				>
+					core values
 				</a>
 
 				{/* <a
