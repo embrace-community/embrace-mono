@@ -18,7 +18,7 @@ const inter = Inter({ subsets: ["latin"], weight: ["300", "600"] });
 
 export function App({ app }: Props) {
 	return (
-		<section className="md:justify-left flex max-w-[800px] cursor-pointer flex-col items-center gap-2 rounded-xl border-[1px] border-light p-2 md:h-64 md:flex-row md:gap-6 md:p-6">
+		<section className="md:justify-left flex max-w-[800px] cursor-pointer flex-col items-center gap-2 rounded-xl border-[1px] border-light p-2  md:flex-row md:gap-6 md:p-6">
 			<div className="md:hidden">{app.icon}</div>
 			<div className="hidden md:block">{app.lgIcon}</div>
 			<div className="flex-1">
