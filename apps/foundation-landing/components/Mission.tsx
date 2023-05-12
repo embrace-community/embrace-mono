@@ -46,7 +46,7 @@ export default function Mission() {
 			</h2>
 			<h3
 				className={classNames({
-					"my-2 text-xl italic tracking-tight": true,
+					"my-2 text-lg tracking-tight md:text-xl": true,
 					[manrope.className]: true,
 				})}
 			>

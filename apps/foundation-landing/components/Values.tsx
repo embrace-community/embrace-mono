@@ -53,12 +53,11 @@ export default function Values() {
 			</h2>
 			<h3
 				className={classNames({
-					"my-2 text-xl tracking-tight": true,
+					"my-2 text-lg tracking-tight md:text-xl": true,
 					[manrope.className]: true,
 				})}
 			>
-				These core values are the soul of Embrace Community and they
-				guide everything we do.
+				These core values guide everything we do.
 			</h3>
 			<section className="grid grid-flow-row-dense grid-cols-2 gap-2 text-center md:grid-cols-3">
 				{values.map((value, index) => (
