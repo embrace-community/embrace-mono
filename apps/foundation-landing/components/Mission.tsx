@@ -18,15 +18,16 @@ const features: IFeature[] = [
 		caption:
 			"With the power of decentralisation,\n we can transform our society.",
 		description:
-			"By distributing ownership and decision making, communities can participate and own the apps they help create.",
+			"By distributing ownership and decision making, communities can direct and own the apps they use.",
 	},
 	{
 		icon: <Heart className="mx-auto my-4 h-12 w-12 text-light" />,
 		title: "Open Source",
 		caption:
-			"All our software is open source,\n so we can share our knowledge with all.",
+			"We recognise that open source\n software empowers communities.",
 		description:
-			"We contribute to the wider community and empower others to develop their own community software.",
+			// "We contribute to the wider community and empower others to develop their own community software.",
+			"All of our software is open source, to contribute to the wider community and empower others to develop their own community software.",
 	},
 ];
 
@@ -49,7 +50,7 @@ export default function Mission() {
 					[manrope.className]: true,
 				})}
 			>
-				To apply technology that cultivates healthy and thriving
+				To create technology that cultivates healthy and thriving
 				communities.
 			</h3>
 			<section className="flex flex-col gap-4 lg:m-4 lg:flex-row">

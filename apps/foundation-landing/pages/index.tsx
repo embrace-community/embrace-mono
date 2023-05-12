@@ -1,10 +1,10 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Principles from "@/components/Principles";
+// import Principles from "@/components/Principles";
 import Mission from "@/components/Mission";
 // import Contribute from "@/components/Contribute";
 import Head from "next/head";
-import Apps from "@/components/Apps";
+// import Apps from "@/components/Apps";
 import Footer from "@/components/Footer";
 
 export default function Home() {
