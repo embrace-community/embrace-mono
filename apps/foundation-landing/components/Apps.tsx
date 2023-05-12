@@ -58,7 +58,7 @@ export default function Building() {
 					[manrope.className]: true,
 				})}
 			>
-				Apps
+				Projects
 			</h2>
 			<section className="mx-auto flex flex-col gap-3">
 				{apps.map((app, index) => (

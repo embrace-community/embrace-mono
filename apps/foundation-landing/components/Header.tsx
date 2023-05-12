@@ -50,7 +50,7 @@ export default function Navigation() {
 						[inter.className]: true,
 					})}
 				>
-					apps
+					projects
 				</a>
 
 				<a
