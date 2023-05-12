@@ -57,8 +57,8 @@ export default function Values() {
 					[manrope.className]: true,
 				})}
 			>
-				These core values motivate and guide us <br />
-				in everything we do.
+				These core values motivate and guide the Embrace Community
+				project.
 			</h3>
 			<section className="grid grid-flow-row-dense grid-cols-2 gap-2 text-center md:grid-cols-3">
 				{values.map((value, index) => (
