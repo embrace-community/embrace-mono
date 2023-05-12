@@ -14,6 +14,9 @@ const values: IValue[] = [
 	{
 		value: "Transparency",
 	},
+	// {
+	// 	value: "Integrity",
+	// },
 	{
 		value: "Creativity",
 	},
@@ -55,7 +58,7 @@ export default function Values() {
 				})}
 			>
 				These core values are the soul of Embrace Community and they
-				inform everything we do.
+				guide everything we do.
 			</h3>
 			<section className="grid grid-flow-row-dense grid-cols-2 gap-2 text-center md:grid-cols-3">
 				{values.map((value, index) => (
