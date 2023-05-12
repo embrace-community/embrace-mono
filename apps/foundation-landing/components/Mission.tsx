@@ -8,25 +8,25 @@ const features: IFeature[] = [
 		icon: <UsersThree className="mx-auto my-4 h-12 w-12 text-light" />,
 		title: "Community First",
 		caption:
-			"Community is our greatest resource.\n It's what makes us Human.",
+			"Community is our greatest resource.\n It is what makes us Human.",
 		description:
 			"As technology continues to proliferate society we need to prioritise the health of our communities above all.",
 	},
 	{
-		icon: <Heart className="mx-auto my-4 h-12 w-12 text-light" />,
-		title: "Non-Profit",
+		icon: <Globe className="mx-auto my-4 h-12 w-12 text-light" />,
+		title: "Decentralisation",
 		caption:
-			"We are not motivated by profit;\n we are in service to community",
+			"With the power of decentralisation,\n we can transform our society.",
 		description:
-			"Our sole priority is to remain in service to communities across the globe.  To stay true to this aim we are a non-profit organisation.",
+			"By distributing ownership and decision making, communities can participate and own the apps they help create.",
 	},
 	{
-		icon: <Globe className="mx-auto my-4 h-12 w-12 text-light" />,
+		icon: <Heart className="mx-auto my-4 h-12 w-12 text-light" />,
 		title: "Open Source",
 		caption:
 			"All our software is open source,\n so we can share our knowledge with all.",
 		description:
-			"We contribute to the wider community and encourage others to develop their own community software.",
+			"We contribute to the wider community and empower others to develop their own community software.",
 	},
 ];
 
@@ -41,8 +41,17 @@ export default function Mission() {
 					[manrope.className]: true,
 				})}
 			>
-				Our Mission
+				Mission
 			</h2>
+			<h3
+				className={classNames({
+					"my-2 text-xl italic tracking-tight md:my-4": true,
+					[manrope.className]: true,
+				})}
+			>
+				To apply technology that cultivates healthy and thriving
+				communities.
+			</h3>
 			<section className="flex flex-col gap-4 lg:m-4 lg:flex-row">
 				{features.map((item, index) => (
 					<Feature item={item} key={index} />

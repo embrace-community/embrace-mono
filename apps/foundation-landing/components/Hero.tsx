@@ -14,9 +14,12 @@ export default function Hero() {
 					})}
 				>
 					creating open source <br />
-					software to <i>protect</i> <br />
-					and <i>cultivate communities</i>
+					software to <i>cultivate</i> <br />
+					<i>healthy communities</i>
 				</h2>
+				{/* <button className="mt-3 cursor-pointer rounded-md bg-primary p-3 text-white">
+					spread the word
+				</button> */}
 			</section>
 			<section className="mx-auto min-h-[224px] w-full bg-[url('/images/community-mobile.jpg')] bg-cover bg-bottom sm:min-h-[320px] sm:w-3/5 sm:rounded-r-md sm:bg-[url('/images/community.jpg')]"></section>
 		</article>

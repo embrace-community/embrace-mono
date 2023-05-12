@@ -32,7 +32,7 @@ export default function Navigation() {
 				embrace community
 			</h1>
 
-			<nav className="hidden md:flex md:grow md:flex-row md:justify-end md:gap-4">
+			<nav className="hidden md:grow md:flex-row md:justify-end md:gap-4">
 				<a
 					href="#principles"
 					className={classNames({

@@ -44,7 +44,7 @@ contract Deploy is Script {
         // embraceApps = new EmbraceApps();
 
         appCreations = new AppCreations(address(embraceCommunities));
-        appSocials = new AppSocials(address(embraceCommunities));
+        // appSocials = new AppSocials(address(embraceCommunities));
 
         console.log("CONTRACT_ADDRESS_COMMUNITY=\"%s\"", address(embraceCommunity));
         console.log("CONTRACT_ADDRESS_COMMUNITIES=\"%s\"", address(embraceCommunities));
@@ -52,25 +52,8 @@ contract Deploy is Script {
         console.log("CONTRACT_ADDRESS_APP_CREATIONS=\"%s\"", address(appCreations));
         console.log("CONTRACT_ADDRESS_APP_SOCIALS=\"%s\"", address(appSocials));
 
-        createApps();
+        // createApps();
 
         vm.stopBroadcast();
-    }
-
-    function createApps() internal {
-        // apps = [
-        //     Apps("Social", address(appSocials), true),
-        //     Apps("Creations", address(appCreations), true),
-        //     Apps("Chat Server", address(0), true),
-        //     Apps("Streaming", address(0), true),
-        //     Apps("Courses", address(0), false),
-        //     Apps("Pages", address(0), false),
-        //     Apps("Marketplace", address(0), false),
-        //     Apps("Discussions", address(0), true)
-        // ];
-
-        // for (uint256 i = 0; i < apps.length; i++) {
-        //     embraceApps.createApp(apps[i].name, apps[i].contractAddress, apps[i].enabled);
-        // }
     }
 }
