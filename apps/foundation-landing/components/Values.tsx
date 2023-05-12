@@ -60,7 +60,7 @@ export default function Values() {
 				These core values motivate and guide the Embrace Community
 				project.
 			</h3>
-			<section className="grid grid-flow-row-dense grid-cols-2 gap-2 text-center md:grid-cols-3">
+			<section className="grid grid-flow-row-dense grid-cols-1 gap-2 text-center md:grid-cols-3">
 				{values.map((value, index) => (
 					<Value key={index} value={value} />
 				))}
