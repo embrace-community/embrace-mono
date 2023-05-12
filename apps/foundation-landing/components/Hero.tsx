@@ -21,6 +21,7 @@ export default function Hero() {
 					spread the word
 				</button> */}
 			</section>
+			{/* Image from Medicine Festival 2022 by Mateusz Dudek - Blue Sky Pixels */}
 			<section className="mx-auto min-h-[224px] w-full bg-[url('/images/community-mobile.jpg')] bg-cover bg-bottom sm:min-h-[320px] sm:w-3/5 sm:rounded-r-md sm:bg-[url('/images/community.jpg')]"></section>
 		</article>
 	);

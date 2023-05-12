@@ -27,7 +27,7 @@ const features: IFeature[] = [
 			"We recognise that open source\n software empowers communities.",
 		description:
 			// "We contribute to the wider community and empower others to develop their own community software.",
-			"All of our software is open source, to contribute to the wider community and empower others to develop their own community software.",
+			"All of our software is open source to contribute to the wider community and empower others to develop their own community software.",
 	},
 ];
 
@@ -50,7 +50,7 @@ export default function Mission() {
 					[manrope.className]: true,
 				})}
 			>
-				To create technology that cultivates healthy and thriving
+				To create software that cultivates healthy and thriving
 				communities.
 			</h3>
 			<section className="flex flex-col gap-4 lg:m-4 lg:flex-row">
