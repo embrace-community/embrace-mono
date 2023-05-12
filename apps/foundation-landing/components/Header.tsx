@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"], weight: "200" });
 
 export default function Navigation() {
 	return (
-		<header className=" flex flex-row items-center justify-center gap-4 border-b-[1px] border-b-light p-3 sm:justify-start md:mx-4">
+		<header className="flex flex-row items-center justify-center gap-4 border-b-[1px] border-b-light p-3 sm:justify-start">
 			<Image
 				src="/images/embrace-foundation.png"
 				className="sm:hidden"
@@ -17,7 +17,7 @@ export default function Navigation() {
 
 			<Image
 				src="/images/embrace-foundation.png"
-				className="hidden py-2 sm:block"
+				className="mx-2 hidden py-2 sm:block"
 				width={104}
 				height={104}
 				alt="Embrace Foundation"
@@ -44,13 +44,13 @@ export default function Navigation() {
 				</a>
 
 				<a
-					href="#principles"
+					href="#values"
 					className={classNames({
 						"text-dark": true,
 						[inter.className]: true,
 					})}
 				>
-					principles
+					core values
 				</a>
 
 				<a

@@ -9,7 +9,7 @@ const apps: IApp[] = [
 	{
 		icon: (
 			<Image
-				src="/images/creator.png"
+				src="/images/creator-2.png"
 				width={120}
 				height={120}
 				alt="Embrace Creator"
@@ -17,15 +17,14 @@ const apps: IApp[] = [
 		),
 		lgIcon: (
 			<Image
-				src="/images/creator.png"
+				src="/images/creator-2.png"
 				width={160}
 				height={160}
 				alt="Embrace Creator"
 			/>
 		),
 		title: "Embrace Community",
-		description:
-			"As technology continues to proliferate society we need to prioritise the health of our communities above all.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non risus eget ex luctus pulvinar. Phasellus nulla dui, ornare ac nulla id, aliquet pharetra sem. ",
+		description: `Our first application empowers Creators by enabling them to take full ownership of their content and connect directly with their community.\nUsing blockchain technology, Creators can now connect with and grow their community without the need for a middleman.`,
 	},
 	// {
 	// 	icon: (

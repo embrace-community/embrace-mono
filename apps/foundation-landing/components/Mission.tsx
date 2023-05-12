@@ -35,7 +35,7 @@ const manrope = Manrope({ subsets: ["latin"], weight: "300" });
 
 export default function Mission() {
 	return (
-		<article id="mission" className="flex flex-col gap-4 p-3">
+		<article id="mission" className="mt-2 flex flex-col gap-4 p-3">
 			<h2
 				className={classNames({
 					"text-2xl tracking-tight md:text-3xl": true,
@@ -46,7 +46,7 @@ export default function Mission() {
 			</h2>
 			<h3
 				className={classNames({
-					"my-2 text-xl italic tracking-tight md:my-4": true,
+					"my-2 text-xl italic tracking-tight": true,
 					[manrope.className]: true,
 				})}
 			>

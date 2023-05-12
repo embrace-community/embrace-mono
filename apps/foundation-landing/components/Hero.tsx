@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ["latin"], weight: "200" });
 
 export default function Hero() {
 	return (
-		<article className="mb-2 mt-4 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-center sm:px-6 sm:py-4">
+		<article className="mb-2 flex flex-col gap-6 py-3 sm:flex-row sm:items-center sm:justify-center sm:px-6 sm:py-4 md:border-b-[1px] md:border-b-light">
 			<section className="sm:w-2/5">
 				<h2
 					className={classNames({
