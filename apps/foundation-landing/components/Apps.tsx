@@ -23,7 +23,7 @@ const apps: IApp[] = [
 				alt="Embrace Creator"
 			/>
 		),
-		title: "Embrace Community",
+		title: "Creator",
 		description: `Our first application empowers Creators by enabling them to take full ownership of their content and connect directly with their community.\nUsing blockchain technology, Creators can now connect with and grow their community without the need for a middleman.`,
 	},
 	// {
