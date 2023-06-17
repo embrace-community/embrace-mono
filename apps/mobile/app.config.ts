@@ -6,7 +6,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
   name: Env.NAME,
   description: `${Env.NAME} Mobile App`,
-  slug: 'obytesapp',
+  slug: 'embrace-mono-mobile',
   version: Env.VERSION.toString(),
   orientation: 'portrait',
   icon: `${withEnvSuffix('./assets/icon')}.png`,
@@ -18,11 +18,13 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   updates: {
     fallbackToCacheTimeout: 0,
+    url: 'https://u.expo.dev/6019ddd1-a639-4295-a06b-ae43451e95df',
   },
   assetBundlePatterns: ['**/*'],
   ios: {
     supportsTablet: true,
     bundleIdentifier: Env.BUNDLE_ID,
+    runtimeVersion: '1.0.0',
   },
   android: {
     adaptiveIcon: {
@@ -30,6 +32,9 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       backgroundColor: '#FFFFFF',
     },
     package: Env.PACKAGE,
+    runtimeVersion: {
+      policy: 'sdkVersion',
+    },
   },
   web: {
     favicon: './assets/favicon.png',
@@ -39,6 +44,9 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     'expo-localization',
   ],
   extra: {
+    eas: {
+      projectId: '6019ddd1-a639-4295-a06b-ae43451e95df',
+    },
     ...ClientEnv,
   },
 });
