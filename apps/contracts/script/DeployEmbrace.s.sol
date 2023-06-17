@@ -2,11 +2,11 @@
 pragma solidity >=0.8.19;
 
 import "forge-std/Console.sol";
-import {Script} from "forge-std/Script.sol";
-import {EmbraceCommunities} from "../src/EmbraceCommunities.sol";
-import {EmbraceCommunity} from "../src/EmbraceCommunity.sol";
-import {AppCreations} from "../src/app/AppCreations.sol";
-import {AppSocials} from "../src/app/AppSocials.sol";
+import { Script } from "forge-std/Script.sol";
+import { EmbraceCommunities } from "../src/EmbraceCommunities.sol";
+import { EmbraceCommunity } from "../src/EmbraceCommunity.sol";
+import { AppCreations } from "../src/app/AppCreations.sol";
+import { AppSocials } from "../src/app/AppSocials.sol";
 
 /// @dev See the Solidity Scripting tutorial: https://book.getfoundry.sh/tutorials/solidity-scripting
 contract Deploy is Script {
