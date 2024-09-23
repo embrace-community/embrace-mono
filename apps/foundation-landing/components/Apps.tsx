@@ -25,7 +25,7 @@ const apps: IApp[] = [
 		),
 		title: "Embrace",
 		tagline: `Embrace your community`,
-		description: `The intention of this project is to enable communities to take full ownership of their application and reduce their dependance on big tech companies.  Enabling communities to take back the reigns and steer their own destiny.`,
+		description: `The intention of this project is to allow communities to take full ownership of their application and reduce their dependance on big tech companies.  Enabling communities to take back the reigns and steer their own destiny.`,
 	},
 	// {
 	// 	icon: (
