@@ -11,6 +11,7 @@ export interface IApp {
 	lgIcon?: ReactNode;
 	title: string;
 	description: string;
+	tagline: string;
 }
 
 const manrope = Manrope({ subsets: ["latin"], weight: ["300"] });
@@ -37,7 +38,7 @@ export function App({ app }: Props) {
 						[inter.className]: true,
 					})}
 				>
-					Own your platform, Embrace your Community
+					{app.tagline}
 				</p>
 				<p
 					className={classNames({

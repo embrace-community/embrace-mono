@@ -23,8 +23,10 @@ const apps: IApp[] = [
 				alt="Embrace Creator"
 			/>
 		),
-		title: "Creator",
-		description: `Our first application empowers Creators by enabling them to take full ownership of their content and connect directly with their community.\nUsing blockchain technology, Creators can now connect with and grow their community without the need for a middleman.`,
+		title: "Embrace",
+		tagline: `Embrace your community`,
+		description: `The intention of this project is to enable communities to take full ownership of their application and reduce their dependance on big tech companies.
+		By reducing our reliance on big tech companies, communities can take back the reigns and steer their own destiny.`,
 	},
 	// {
 	// 	icon: (
